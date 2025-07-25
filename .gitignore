@@ -1,0 +1,15 @@
+# Ignorar pasta node_modules (útil para React e JavaScript)
+node_modules/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar arquivos gerados pelo build
+dist/
+build/
+
+# Modelo frontend
+modelo/
