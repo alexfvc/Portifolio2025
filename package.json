@@ -2,7 +2,7 @@
   "name": "protifolio-2025",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://alexfvc.github.io/Portifolio2025/",
+  "homepage": "Portifolio2025/",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
