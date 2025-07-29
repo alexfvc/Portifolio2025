@@ -2,12 +2,15 @@
   "name": "protifolio-2025",
   "private": true,
   "version": "0.0.0",
-  "homepage": "Portifolio2025/",
+  "homepage": "https://alexfvc.github.io/Portifolio2025/",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
+    "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm rum build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
