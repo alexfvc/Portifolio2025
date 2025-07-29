@@ -161,7 +161,7 @@ const Home = () =>{
                 </Typography>
                 <Box minWidth={200} minHeight={5} bgcolor={alpha(primaryColors.primary.main,1)} borderRadius={5}></Box>
                 <Typography variant='h6' color='text.secondary' textAlign={'center'} p={3}>
-                    Sou um desenvolvedor apaixonado por criar experiências digitais excepcionais. Com mais de 5 anos de experiência, especializei-me em desenvolvimento full stack, sempre buscando as melhores práticas e tecnologias mais recentes.
+                    Sou um desenvolvedor apaixonado por criar experiências digitais excepcionais. Especializei-me em desenvolvimento full stack, sempre buscando as melhores práticas e tecnologias mais recentes.
                 </Typography>
             </Stack>
 
