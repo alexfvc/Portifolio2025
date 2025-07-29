@@ -1,6 +1,7 @@
 import { Button, Stack, Typography, Box, Avatar } from '@mui/material';
 import { Icon } from "@iconify/react"
-import foto from '../../assets/images/foto.png';
+import cenix from '../../assets/images/cenix.png';
+import profile from '../../assets/images/Profile.jpg'
 import usePrimaryColors from '../../theme/colors';
 import { alpha, useTheme } from '@mui/system';
 
@@ -96,7 +97,7 @@ const Home = () =>{
         >
         <Box >   
             <Avatar
-                src={foto}
+                src={profile}
                 alt="Foto de perfil"
                 sx={{
                 width: 200,
@@ -160,7 +161,7 @@ const Home = () =>{
                 >Sobre Mim
                 </Typography>
                 <Box minWidth={200} minHeight={5} bgcolor={alpha(primaryColors.primary.main,1)} borderRadius={5}></Box>
-                <Typography variant='h6' color='text.secondary' textAlign={'center'} p={3}>
+                <Typography variant='h6' color='text.secondary' textAlign={'justify'} p={3}>
                     <p> Sempre tive uma forte inclinação pelas ciências exatas. No ensino fundamental, me encantava especialmente com geometria. Mais tarde, no cursinho pré-vestibular, foi a física que conquistou minha atenção de forma definitiva. Ingressei no curso de Física na Universidade de Brasília (UnB).
                     </p>
                     <p>Durante a graduação, iniciei um estágio no extinto Ministério da Previdência Social, onde tive meu primeiro contato prático com análise de dados, produzindo relatórios a partir de anuários estatísticos. Essa vivência se somou às atividades laboratoriais do curso, nas quais a coleta e análise de dados eram fundamentais. Cheguei a atuar como monitor voluntário em Física Experimental 4, ajudando colegas a compreender essas etapas. Mais adiante, me envolvi com o ensino por meio do PIBID (Programa Institucional de Bolsa de Iniciação à Docência), onde encontrei um novo propósito: a educação.
@@ -279,10 +280,10 @@ const Home = () =>{
 
     {/* Experiences */}
     <Box p={3} my={6} id={'experiences'} sx={{scrollMarginTop: {xs:175, sm:175, md:100}}}>
-        <Stack direction={'column'} alignItems={'center'} spacing={3}>
+        <Stack direction={'column'} justifyContent={'center'} alignItems={'center'} spacing={3}>
             <Typography variant='h3' fontWeight={'bold'} textAlign={'center'}>Experiências Profissionais
             </Typography>
-        <Box minWidth={200} minHeight={5} bgcolor={alpha(primaryColors.primary.main,1)} borderRadius={5}></Box>
+            <Box minWidth={200} minHeight={5} bgcolor={alpha(primaryColors.primary.main,1)} borderRadius={5}></Box>
 
             <Typography variant='h6' color='text.secondary' textAlign={'center'} p={3}>
                 Uma jornada de crescimento e aprendizado constante no mundo da tecnologia.
@@ -302,26 +303,33 @@ const Home = () =>{
             }}>
             <Stack pl={{xs:0,md:3}} pr={{xs:0,md:5}}>
                 <Stack direction={{xs:'column',md:'row'}}  spacing={{xs:2,md:3}} py={2} justifyContent={'space-between'}>
-                    <Stack direction={'column'} py={2} >
+                    <Stack display={'block'} justifyContent={'center'} alignItems={'center'} spacing={1} >
                         <Stack direction={'row'} spacing={2}>
-                            <Avatar src={'../../../public/icons/logo-single.png'} />
-                        <Typography variant='h3'>Cenix!</Typography>
+                            <Avatar src={cenix} />
+                            <Typography variant='h3'>Cenix!</Typography>
                         </Stack>
                         <Typography variant='h6' color={primaryColors.primary.dark}>Programador Full Stack Jr</Typography>
                     </Stack>
-                    <Stack direction={'column'} justifyContent={'center'} spacing={1}>
+                    <Stack display={'block'} justifyContent={'center'} alignItems={'center'} py={1} spacing={1}>
+                        <Stack direction={'row'} spacing={2} alignContent={'center'}>
+                            <Icon  icon={'stash:data-date-light'} fontSize={'40px'} color={alpha('rgba(100,100,100)',1)}/>
+                            <Typography variant='h5' color='text.secondary'>/2024  ...  Present</Typography>
+                        </Stack>
                         <Stack direction={'row'} spacing={2}>
                             <Icon icon={'icon-park-outline:local'} fontSize={'35px'} color={alpha('rgba(100,100,100)',1)} />
                             <Typography variant='h5' color='text.secondary'>Agricola 2 Wermann</Typography>
                         </Stack>
-                        <Stack direction={'row'}  spacing={2} alignContent={'center'}>
-                            <Icon  icon={'stash:data-date-light'} fontSize={'40px'} color={alpha('rgba(100,100,100)',1)}/>
-                            <Typography variant='h5' color='text.secondary'>/2024  ...  Present</Typography>
-                        </Stack>
                     </Stack> 
                 </Stack>
                 <Stack>
-                    <Typography alignContent={'flex-start'} variant='h6' textAlign={'start'} color='text.secondary'>Backend em C# e Frontend JavaScript e React</Typography>
+                    <Typography alignContent={'flex-start'} variant='h6' textAlign={'justify'} color='text.secondary'>
+                        <p> 
+                        Participei de um treinamento prático em C#, com foco em Clean Architecture e boas práticas de código, onde desenvolvi uma API para o controle de estoque de uma empresa. Ao final do treinamento, construí o frontend utilizando JavaScript, React e componentes do Material UI.
+                        </p>
+                        <p>
+                        Após o treinamento, desenvolvi do zero um sistema completo para organização de filas de oficina e lavagem de veículos da empresa, implementando o backend em C# com arquitetura limpa. Esse sistema está atualmente em produção e em uso pela equipe.
+                        </p>                     
+                    </Typography>
                 </Stack>
             </Stack>
 
