@@ -5,12 +5,6 @@
   "homepage": "https://alexfvc.github.io/Portifolio2025",
   "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "dev": "vite --host",
     "lint": "eslint .",
     "preview": "vite preview"
