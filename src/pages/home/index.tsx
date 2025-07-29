@@ -175,84 +175,102 @@ const Home = () =>{
             <Stack direction={{xs:'column',md:'row'}} alignItems={'center'} spacing={{xs:2, md:4}}>
                 <Stack direction={{xs:'column',sm:'row',md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
                     <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={2}
-                        sx={{p:3,
-                            borderRadius:'5px',
-                            bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                            minHeight:'100px',
-                            minWidth:'100px',
-                            transition: '0.6s ease-in', 
+                        sx={{
+                            p: 3,
+                            borderRadius: '5px',
+                            bgcolor: alpha('rgb(224, 224, 224)', 0.3),
+                            width: '175px',
+                            height: '175px',
+                            transition: '0.6s ease-in',
                             '&:hover': {
                             boxShadow: 15,
-                            bgcolor:alpha('rgb(224, 224, 224)',0.1),                    
-                            },
+                            bgcolor: alpha('rgb(224, 224, 224)', 0.1),
+                            width: '155px',
+                            height: '155px',
+                        },
                         }}
                         boxShadow={2}
                         >
-                            <Icon icon={'streamline-ultimate:programming-hold-code-2-bold'} fontSize={'2rem'}></Icon>
-                            <Typography>5+ Anos</Typography>
-                            <Typography>texto</Typography>
-                </Stack>
+                            <Icon icon={'streamline-ultimate:programming-hold-code-2-bold'}
+                                fontSize={'2rem'}
+                                color={theme.palette.primary.main} ></Icon>
+                            <Typography fontWeight={'bold'}>5+ Anos</Typography>
+                            <Typography>de muito estudo</Typography>
+                    </Stack>
                     <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={2}
-                        sx={{p:3,
-                            borderRadius:'5px',
-                            bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                            minWidth:'100px',
-                            minHeight:'100px',
-                            transition: '0.6s ease-in', 
+                        sx={{
+                            p: 3,
+                            borderRadius: '5px',
+                            bgcolor: alpha('rgb(224, 224, 224)', 0.3),
+                            width: '175px',
+                            height: '175px',
+                            transition: '0.6s ease-in',
                             '&:hover': {
                             boxShadow: 15,
-                            bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                            minWidth:'105px',
-                            minHeight:'105px',
+                            bgcolor: alpha('rgb(224, 224, 224)', 0.1),
+                            width: '155px',
+                            height: '155px',
                             },
                         }}
                         boxShadow={2}
                         >
-                            <Icon icon={'ix:projects'} fontSize={'2rem'}></Icon>
-                            <Typography>20+ Projetos</Typography>
-                            <Typography>texto</Typography>                    
+                            <Icon icon={'ix:projects'} 
+                                fontSize={'2rem'}
+                                color={theme.palette.primary.main}></Icon>
+                            <Typography fontWeight={'bold'}>15+ Projetos</Typography>
+                            <Typography>No GitHub </Typography>  
+                            <Typography>1 em produção </Typography>                  
                     </Stack>
                 </Stack>
                 <Stack direction={{xs:'column', sm:'row', md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
                     <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={2}
-                        sx={{p:3,
-                            borderRadius:'5px',
-                            bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                            minWidth:'100px',
-                            minHeight:'100px',
-                            transition: '0.6s ease-in', 
+                        sx={{
+                            p: 3,
+                            borderRadius: '5px',
+                            bgcolor: alpha('rgb(224, 224, 224)', 0.3),
+                            width: '175px',
+                            height: '175px',
+                            transition: '0.6s ease-in',
                             '&:hover': {
                             boxShadow: 15,
-                            bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                            minWidth:'105px',
-                            minHeight:'105px',
+                            bgcolor: alpha('rgb(224, 224, 224)', 0.1),
+                            width: '155px',
+                            height: '155px',
                             },
                         }} 
                         boxShadow={2}
                         >
-                            <Icon icon={'material-symbols:workspace-premium-outline'} fontSize={'2rem'}></Icon>
-                            <Typography>Certificações</Typography>
-                            <Typography>texto</Typography>
+                            <Icon icon={'material-symbols:workspace-premium-outline'} 
+                            fontSize={'2rem'}
+                            color={theme.palette.primary.main}></Icon>
+                            <Typography fontWeight={'bold'}>Certificações</Typography>
+                            <Typography>Ciência de dados</Typography>
+                            <Typography>desenvolvimento .Net</Typography>
+
                     </Stack>
-                <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={2}
-                    sx={{p:3,
-                        borderRadius:'5px',
-                        bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                        minWidth:'100px',
-                        minHeight:'100px',
-                        transition: '0.6s ease-in', 
-                        '&:hover': {
-                        boxShadow: 15,
-                        bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                        minWidth:'105px',
-                        minHeight:'105px',
-                            },
+                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={2}
+                        sx={{
+                            p: 3,
+                            borderRadius: '5px',
+                            bgcolor: alpha('rgb(224, 224, 224)', 0.3),
+                            width: '175px',
+                            height: '175px',
+                            transition: '0.6s ease-in',
+                            '&:hover': {
+                            boxShadow: 15,
+                            bgcolor: alpha('rgb(224, 224, 224)', 0.1),
+                            width: '155px',
+                            height: '155px',
+                        },
                         }}
                         boxShadow={2}
                         >
-                            <Icon icon={'qlementine-icons:target-16'} fontSize={'2rem'}></Icon>
-                            <Typography>Foco em UX</Typography>
-                            <Typography>texto</Typography>
+                            <Icon icon={'qlementine-icons:target-16'} 
+                            fontSize={'2rem'}
+                            color={theme.palette.primary.main}></Icon>
+                            <Typography fontWeight={'bold'}>Foco </Typography>
+                            <Typography>Código limpo</Typography>
+                            <Typography>Arquitetura limpa</Typography>
                     </Stack>
                 </Stack>
             </Stack>
@@ -337,7 +355,9 @@ const Home = () =>{
                     }}
                     boxShadow={2}
                     >
-                        <Icon icon={'streamline-ultimate:programming-hold-code-2-bold'} fontSize={'2rem'}></Icon>
+                        <Box >
+                            <Icon icon="streamline-ultimate:programming-hold-code-2-bold" fontSize="2rem" color={theme.palette.primary.main} />
+                        </Box>
                         <Typography>5+ Anos</Typography>
                         <Typography>texto</Typography>
             </Stack>
