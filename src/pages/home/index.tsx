@@ -149,7 +149,7 @@ const Home = () =>{
     {/* Degree */}
     <Box 
         height={100}
-        sx={{backgroundImage:`linear-gradient(to bottom, ${primaryColors.primary.dark}, ${theme.palette.action.hover})`}}>    
+        sx={{backgroundImage:`linear-gradient(to bottom, ${primaryColors.primary.dark}, ${alpha(theme.palette.action.hover,0)})`}}>    
     </Box>
 
     {/* About */}
