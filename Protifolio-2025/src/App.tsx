@@ -8,9 +8,7 @@ function App() {
 
   return (
     <Routes>
-      {/* tela inicial*/  }
       <Route path='/' element={<Home />}/>
-      {/* qualquer URL desconhecida → redireciona para a tela inicial */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
