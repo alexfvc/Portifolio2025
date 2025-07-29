@@ -161,7 +161,14 @@ const Home = () =>{
                 </Typography>
                 <Box minWidth={200} minHeight={5} bgcolor={alpha(primaryColors.primary.main,1)} borderRadius={5}></Box>
                 <Typography variant='h6' color='text.secondary' textAlign={'center'} p={3}>
-                    Sou um desenvolvedor apaixonado por criar experiências digitais excepcionais. Especializei-me em desenvolvimento full stack, sempre buscando as melhores práticas e tecnologias mais recentes.
+                    <p> Sempre tive uma forte inclinação pelas ciências exatas. No ensino fundamental, me encantava especialmente com geometria. Mais tarde, no cursinho pré-vestibular, foi a física que conquistou minha atenção de forma definitiva. Iniciei a graduação em Engenharia Civil no Centro Universitário de Brasília (UniCEUB), influenciado por fatores familiares, e encontrei nas disciplinas ligadas à física meu maior interesse. No entanto, conforme o curso se afastava desses temas e somando-se a dificuldades financeiras da minha família, decidi redirecionar meu caminho e ingressei no curso de Física na Universidade de Brasília (UnB).
+                    </p>
+                    <p>Durante a graduação, iniciei um estágio no extinto Ministério da Previdência Social, onde tive meu primeiro contato prático com análise de dados, produzindo relatórios a partir de anuários estatísticos. Essa vivência se somou às atividades laboratoriais do curso, nas quais a coleta e análise de dados eram fundamentais. Cheguei a atuar como monitor voluntário em Física Experimental 4, ajudando colegas a compreender essas etapas. Mais adiante, me envolvi com o ensino por meio do PIBID (Programa Institucional de Bolsa de Iniciação à Docência), onde encontrei um novo propósito: a educação.
+                    </p>
+                    <p>Formei-me em Física em 2018 e hoje leciono no estado de Minas Gerais. No mesmo ano, fui aprovado no concurso de professor efetivo do Estado de Minas Gerais. Atuei como docente e iniciei um mestrado profissional em ensino de física (MNPEF). No entanto, questões logísticas e financeiras relacionadas às viagens até o polo do curso me impediram de concluí-lo naquele momento.
+                    </p>
+                    <p>No fim de 2021, concluí cursos de Python e banco de dados, que reacenderam meu interesse pela tecnologia. Desde então, venho aprofundando meus conhecimentos na área de desenvolvimento de software. Atualmente, estou focado na atuação como desenvolvedor full stack, utilizando C# no backend e React com JavaScript no frontend. Tenho me dedicado à construção de projetos práticos, sempre buscando aplicar boas práticas de desenvolvimento, arquitetura limpa e integração entre sistemas. Estou em transição definitiva para a área de tecnologia, onde pretendo unir minha experiência com dados, minha vivência em ensino e minha paixão por resolver problemas de forma criativa e eficiente.
+                    </p> 
                 </Typography>
             </Stack>
 
