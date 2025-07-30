@@ -4,6 +4,7 @@ import cenix from '../../assets/images/cenix.png';
 import profile from '../../assets/images/Profile.jpg'
 import usePrimaryColors from '../../theme/colors';
 import { alpha, useTheme } from '@mui/system';
+import HomeIntroSectionComponent from '../../components/intro-Section';
 
 
 
@@ -155,13 +156,9 @@ const Home = () =>{
 
     {/* About */}
     <Box p={3} my={6} id={'about'} sx={{scrollMarginTop: {xs:175, sm:175, md:100}}}>  
-        <Stack direction={{sx:'column',sm:'row', md:'column'}} alignItems={'center'}  spacing={2}>
-            <Stack direction={'column'} alignItems={'center'} spacing={3}>
-                <Typography variant='h3' fontWeight={'bold'} textAlign={'center'}
-                >Sobre Mim
-                </Typography>
-                <Box minWidth={200} minHeight={5} bgcolor={alpha(primaryColors.primary.main,1)} borderRadius={5}></Box>
-                <Typography variant='h6' color='text.secondary' textAlign={'justify'} p={3}>
+        <Stack direction={{sx:'column', md:'column'}} alignItems={'center'}  spacing={2}>
+            <HomeIntroSectionComponent title='Sobre Mim'>   
+                <>
                     <p> Sempre tive uma forte inclinação pelas ciências exatas. No ensino fundamental, me encantava especialmente com geometria. Mais tarde, no cursinho pré-vestibular, foi a física que conquistou minha atenção de forma definitiva. Ingressei no curso de Física na Universidade de Brasília (UnB).
                     </p>
                     <p>Durante a graduação, iniciei um estágio no extinto Ministério da Previdência Social, onde tive meu primeiro contato prático com análise de dados, produzindo relatórios a partir de anuários estatísticos. Essa vivência se somou às atividades laboratoriais do curso, nas quais a coleta e análise de dados eram fundamentais. Cheguei a atuar como monitor voluntário em Física Experimental 4, ajudando colegas a compreender essas etapas. Mais adiante, me envolvi com o ensino por meio do PIBID (Programa Institucional de Bolsa de Iniciação à Docência), onde encontrei um novo propósito: a educação.
@@ -170,8 +167,8 @@ const Home = () =>{
                     </p>
                     <p>No fim de 2021, concluí cursos de Python e banco de dados, que reacenderam meu interesse pela tecnologia. Desde então, venho aprofundando meus conhecimentos na área de desenvolvimento de software. Atualmente, estou focado na atuação como desenvolvedor full stack, utilizando C# no backend e React com JavaScript no frontend. Tenho me dedicado à construção de projetos práticos, sempre buscando aplicar boas práticas de desenvolvimento, arquitetura limpa e integração entre sistemas. Estou em transição definitiva para a área de tecnologia, onde pretendo unir minha experiência com dados, minha vivência em ensino e minha paixão por resolver problemas de forma criativa e eficiente.
                     </p> 
-                </Typography>
-            </Stack>
+                </> 
+            </HomeIntroSectionComponent>
 
             <Stack direction={{xs:'column',md:'row'}} alignItems={'center'} spacing={{xs:2, md:4}}>
                 <Stack direction={{xs:'column',sm:'row',md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
@@ -280,15 +277,14 @@ const Home = () =>{
 
     {/* Experiences */}
     <Box p={3} my={6} id={'experiences'} sx={{scrollMarginTop: {xs:175, sm:175, md:100}}}>
-        <Stack direction={'column'} justifyContent={'center'} alignItems={'center'} spacing={3}>
-            <Typography variant='h3' fontWeight={'bold'} textAlign={'center'}>Experiências Profissionais
-            </Typography>
-            <Box minWidth={200} minHeight={5} bgcolor={alpha(primaryColors.primary.main,1)} borderRadius={5}></Box>
+        <HomeIntroSectionComponent title='Experiências Profissionais' >
+            <> 
+                <p>
+                    Uma jornada de crescimento e aprendizado constante no mundo da tecnologia.
+                </p>
+            </>
+        </HomeIntroSectionComponent>
 
-            <Typography variant='h6' color='text.secondary' textAlign={'center'} p={3}>
-                Uma jornada de crescimento e aprendizado constante no mundo da tecnologia.
-            </Typography>
-        </Stack>
         <Box 
             boxShadow={2}
             sx={{   
@@ -339,14 +335,15 @@ const Home = () =>{
     {/* Skills */}
     <Box p={3} my={6} id={'skills'} sx={{scrollMarginTop: {xs:175, sm:175, md:100}}}>  
         <Stack direction={{sx:'column',sm:'row', md:'column'}} alignItems={'center'} spacing={2}>
-            <Stack direction={'column'} alignItems={'center'} spacing={3}>
-                <Typography variant='h3' fontWeight={'bold'} textAlign={'center'}>Habilidades Técnicas
-                </Typography>
-                <Box minWidth={200} minHeight={5} bgcolor={alpha(primaryColors.primary.main,1)} borderRadius={5}></Box>
-                <Typography variant='h6' color='text.secondary' textAlign={'center'} p={3}>
-                    Tecnologias e ferramentas que procuro dominar para criar soluções completas e eficientes.
-                </Typography>
-            </Stack>
+            <HomeIntroSectionComponent title='Habilidades Técnicas'>
+                <>
+                    <p>
+                        Tecnologias e ferramentas que procuro dominar para criar soluções completas e eficientes.
+                    </p>
+                </>
+
+            </HomeIntroSectionComponent>
+
             <Stack direction={{xs:'column',md:'row'}} alignItems={'center'} spacing={{xs:2, md:4}}>
                 <Stack direction={{xs:'column',sm:'row',md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
                     <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
@@ -445,206 +442,203 @@ const Home = () =>{
     {/* Projects */}
     <Box p={3} my={6} id={'projects'} bgcolor={alpha('rgb(250,0,0)',.1)} sx={{scrollMarginTop: {xs:175, sm:175, md:100}}}>
         <Stack direction={{sx:'column',sm:'row', md:'column'}} alignItems={'center'}  spacing={2}>
-            <Stack direction={'column'} alignItems={'center'} spacing={3}>
-                <Typography variant='h3' fontWeight={'bold'} textAlign={'center'}>Projetos em Destaque
-                </Typography>
-                <Box minWidth={200} minHeight={5} bgcolor={alpha(primaryColors.primary.main,1)} borderRadius={5}></Box>
-                <Typography variant='h6' color='text.secondary' textAlign={'center'} p={3}>
-                    Sou um desenvolvedor apaixonado por criar experiências digitais excepcionais. Com mais de 5 anos de experiência, especializei-me em desenvolvimento full stack, sempre buscando as melhores práticas e tecnologias mais recentes.
-                </Typography>
-            </Stack>
-        <Stack direction={{xs:'column',md:'row'}} alignItems={'center'} spacing={{xs:2, md:4}}>
-            <Stack direction={{xs:'column',sm:'row',md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
-                <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                    sx={{p:3,
-                        borderRadius:'5px',
-                        bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                        minHeight:'100px',
-                        minWidth:'100px',
-                        transition: '0.6s ease-in', 
-                        '&:hover': {
-                        boxShadow: 15,
-                        bgcolor:alpha('rgb(224, 224, 224)',0.1),                    
-                        },
-                    }}
-                    boxShadow={2}
-                    >
-                        <Icon icon={'streamline-ultimate:programming-hold-code-2-bold'} fontSize={'2rem'}></Icon>
-                        <Typography>5+ Anos</Typography>
-                        <Typography>texto</Typography>
-            </Stack>
-                <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                    sx={{p:3,
-                        borderRadius:'5px',
-                        bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                        minWidth:'100px',
-                        minHeight:'100px',
-                        transition: '0.6s ease-in', 
-                        '&:hover': {
-                        boxShadow: 15,
-                        bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                        minWidth:'105px',
-                        minHeight:'105px',
-                        },
-                    }}
-                    boxShadow={2}
-                    >
-                        <Icon icon={'ix:projects'} fontSize={'2rem'}></Icon>
-                        <Typography>20+ Projetos</Typography>
-                        <Typography>texto</Typography>                    
-                </Stack>
-            </Stack>
-            <Stack direction={{xs:'column', sm:'row', md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
-                <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                    sx={{p:3,
-                        borderRadius:'5px',
-                        bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                        minWidth:'100px',
-                        minHeight:'100px',
-                        transition: '0.6s ease-in', 
-                        '&:hover': {
-                        boxShadow: 15,
-                        bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                        minWidth:'105px',
-                        minHeight:'105px',
-                        },
-                    }} 
-                    boxShadow={2}
-                    >
-                        <Icon icon={'material-symbols:workspace-premium-outline'} fontSize={'2rem'}></Icon>
-                        <Typography>Certificações</Typography>
-                        <Typography>texto</Typography>
-                </Stack>
-            <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                sx={{p:3,
-                    borderRadius:'5px',
-                    bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                    minWidth:'100px',
-                    minHeight:'100px',
-                    transition: '0.6s ease-in', 
-                    '&:hover': {
-                    boxShadow: 15,
-                    bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                    minWidth:'105px',
-                    minHeight:'105px',
-                        },
-                    }}
-                    boxShadow={2}
-                    >
-                        <Icon icon={'qlementine-icons:target-16'} fontSize={'2rem'}></Icon>
-                        <Typography>Foco em UX</Typography>
-                        <Typography>texto</Typography>
-                </Stack>
-            </Stack>
-        </Stack>
-        </Stack>
+            <HomeIntroSectionComponent title='Projetos em Destaque' centerText={true}>
+                <>
+                    <p>
+                        Sou um desenvolvedor apaixonado por criar experiências digitais excepcionais. Com mais de 5 anos de experiência, especializei-me em desenvolvimento full stack, sempre buscando as melhores práticas e tecnologias mais recentes.
+                    </p>
+                </>
+            </HomeIntroSectionComponent>
 
+            <Stack direction={{xs:'column',md:'row'}} alignItems={'center'} spacing={{xs:2, md:4}}>
+                <Stack direction={{xs:'column',sm:'row',md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
+                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
+                        sx={{p:3,
+                            borderRadius:'5px',
+                            bgcolor:alpha('rgb(224, 224, 224)',0.3),
+                            minHeight:'100px',
+                            minWidth:'100px',
+                            transition: '0.6s ease-in', 
+                            '&:hover': {
+                            boxShadow: 15,
+                            bgcolor:alpha('rgb(224, 224, 224)',0.1),                    
+                            },
+                        }}
+                        boxShadow={2}
+                        >
+                            <Icon icon={'streamline-ultimate:programming-hold-code-2-bold'} fontSize={'2rem'}></Icon>
+                            <Typography>5+ Anos</Typography>
+                            <Typography>texto</Typography>
+                </Stack>
+                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
+                        sx={{p:3,
+                            borderRadius:'5px',
+                            bgcolor:alpha('rgb(224, 224, 224)',0.3),
+                            minWidth:'100px',
+                            minHeight:'100px',
+                            transition: '0.6s ease-in', 
+                            '&:hover': {
+                            boxShadow: 15,
+                            bgcolor:alpha('rgb(224, 224, 224)',0.1),
+                            minWidth:'105px',
+                            minHeight:'105px',
+                            },
+                        }}
+                        boxShadow={2}
+                        >
+                            <Icon icon={'ix:projects'} fontSize={'2rem'}></Icon>
+                            <Typography>20+ Projetos</Typography>
+                            <Typography>texto</Typography>                    
+                    </Stack>
+                </Stack>
+                <Stack direction={{xs:'column', sm:'row', md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
+                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
+                        sx={{p:3,
+                            borderRadius:'5px',
+                            bgcolor:alpha('rgb(224, 224, 224)',0.3),
+                            minWidth:'100px',
+                            minHeight:'100px',
+                            transition: '0.6s ease-in', 
+                            '&:hover': {
+                            boxShadow: 15,
+                            bgcolor:alpha('rgb(224, 224, 224)',0.1),
+                            minWidth:'105px',
+                            minHeight:'105px',
+                            },
+                        }} 
+                        boxShadow={2}
+                        >
+                            <Icon icon={'material-symbols:workspace-premium-outline'} fontSize={'2rem'}></Icon>
+                            <Typography>Certificações</Typography>
+                            <Typography>texto</Typography>
+                    </Stack>
+                <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
+                    sx={{p:3,
+                        borderRadius:'5px',
+                        bgcolor:alpha('rgb(224, 224, 224)',0.3),
+                        minWidth:'100px',
+                        minHeight:'100px',
+                        transition: '0.6s ease-in', 
+                        '&:hover': {
+                        boxShadow: 15,
+                        bgcolor:alpha('rgb(224, 224, 224)',0.1),
+                        minWidth:'105px',
+                        minHeight:'105px',
+                            },
+                        }}
+                        boxShadow={2}
+                        >
+                            <Icon icon={'qlementine-icons:target-16'} fontSize={'2rem'}></Icon>
+                            <Typography>Foco em UX</Typography>
+                            <Typography>texto</Typography>
+                    </Stack>
+                </Stack>
+            </Stack>
+        </Stack>
     </Box>
 
     {/* Contacts */}
     <Box p={3} my={6} id={'contacts'} bgcolor={alpha('rgb(250,0,0)',.1)} sx={{scrollMarginTop: {xs:175, sm:175, md:100}}}>
         <Stack direction={{sx:'column',sm:'row', md:'column'}} alignItems={'center'}  spacing={2}>
-            <Stack direction={'column'} alignItems={'center'} spacing={3}>
-                <Typography variant='h3' fontWeight={'bold'} textAlign={'center'}>Vamos Conversar
-                </Typography>
-                <Box minWidth={200} minHeight={5} bgcolor={alpha(primaryColors.primary.main,1)} borderRadius={5}></Box>
-                <Typography variant='h6' color='text.secondary' textAlign={'center'} p={3}>
-                    Sou um desenvolvedor apaixonado por criar experiências digitais excepcionais. Com mais de 5 anos de experiência, especializei-me em desenvolvimento full stack, sempre buscando as melhores práticas e tecnologias mais recentes.
-                </Typography>
-            </Stack>
+            <HomeIntroSectionComponent title='Vamos Conversar'>
+                <>
+                    <p>
+                        Estou sempre interessado em novos projetos e oportunidades. Entre em contato e vamos discutir como posso ajudar.
+                    </p>
+                </>
+            </HomeIntroSectionComponent>
+            
             <Stack direction={{xs:'column',md:'row'}} alignItems={'center'} spacing={{xs:2, md:4}}>
                 <Stack direction={{xs:'column',md:'row'}} alignItems={'center'} spacing={{xs:2, md:4}}>
-            <Stack direction={{xs:'column',sm:'row',md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
-                <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                    sx={{p:3,
-                        borderRadius:'5px',
-                        bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                        minHeight:'100px',
-                        minWidth:'100px',
-                        transition: '0.6s ease-in', 
-                        '&:hover': {
-                        boxShadow: 15,
-                        bgcolor:alpha('rgb(224, 224, 224)',0.1),                    
-                        },
-                    }}
-                    boxShadow={2}
-                    >
-                        <Icon icon={'streamline-ultimate:programming-hold-code-2-bold'} fontSize={'2rem'}></Icon>
-                        <Typography>5+ Anos</Typography>
-                        <Typography>texto</Typography>
-            </Stack>
-                <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                    sx={{p:3,
-                        borderRadius:'5px',
-                        bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                        minWidth:'100px',
-                        minHeight:'100px',
-                        transition: '0.6s ease-in', 
-                        '&:hover': {
-                        boxShadow: 15,
-                        bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                        minWidth:'105px',
-                        minHeight:'105px',
-                        },
-                    }}
-                    boxShadow={2}
-                    >
-                        <Icon icon={'ix:projects'} fontSize={'2rem'}></Icon>
-                        <Typography>20+ Projetos</Typography>
-                        <Typography>texto</Typography>                    
+                    <Stack direction={{xs:'column',sm:'row',md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
+                        <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
+                            sx={{p:3,
+                                borderRadius:'5px',
+                                bgcolor:alpha('rgb(224, 224, 224)',0.3),
+                                minHeight:'100px',
+                                minWidth:'100px',
+                                transition: '0.6s ease-in', 
+                                '&:hover': {
+                                boxShadow: 15,
+                                bgcolor:alpha('rgb(224, 224, 224)',0.1),                    
+                                },
+                            }}
+                            boxShadow={2}
+                            >
+                                <Icon icon={'streamline-ultimate:programming-hold-code-2-bold'} fontSize={'2rem'}></Icon>
+                                <Typography>5+ Anos</Typography>
+                                <Typography>texto</Typography>
+                        </Stack>
+                        <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
+                            sx={{p:3,
+                                borderRadius:'5px',
+                                bgcolor:alpha('rgb(224, 224, 224)',0.3),
+                                minWidth:'100px',
+                                minHeight:'100px',
+                                transition: '0.6s ease-in', 
+                                '&:hover': {
+                                boxShadow: 15,
+                                bgcolor:alpha('rgb(224, 224, 224)',0.1),
+                                minWidth:'105px',
+                                minHeight:'105px',
+                                },
+                            }}
+                            boxShadow={2}
+                            >
+                                <Icon icon={'ix:projects'} fontSize={'2rem'}></Icon>
+                                <Typography>20+ Projetos</Typography>
+                                <Typography>texto</Typography>                    
+                        </Stack>
+                    </Stack>
+                    <Stack direction={{xs:'column', sm:'row', md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
+                        <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
+                            sx={{p:3,
+                                borderRadius:'5px',
+                                bgcolor:alpha('rgb(224, 224, 224)',0.3),
+                                minWidth:'100px',
+                                minHeight:'100px',
+                                transition: '0.6s ease-in', 
+                                '&:hover': {
+                                boxShadow: 15,
+                                bgcolor:alpha('rgb(224, 224, 224)',0.1),
+                                minWidth:'105px',
+                                minHeight:'105px',
+                                },
+                            }} 
+                            boxShadow={2}
+                            >
+                                <Icon icon={'material-symbols:workspace-premium-outline'} fontSize={'2rem'}></Icon>
+                                <Typography>Certificações</Typography>
+                                <Typography>texto</Typography>
+                        </Stack>
+                        <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
+                            sx={{p:3,
+                                borderRadius:'5px',
+                                bgcolor:alpha('rgb(224, 224, 224)',0.3),
+                                minWidth:'100px',
+                                minHeight:'100px',
+                                transition: '0.6s ease-in', 
+                                '&:hover': {
+                                boxShadow: 15,
+                                bgcolor:alpha('rgb(224, 224, 224)',0.1),
+                                minWidth:'105px',
+                                minHeight:'105px',
+                                    },
+                                }}
+                            boxShadow={2}
+                            >
+                                <Icon icon={'qlementine-icons:target-16'} fontSize={'2rem'}></Icon>
+                                <Typography>Foco em UX</Typography>
+                                <Typography>texto</Typography>
+                        </Stack>
+                    </Stack>
                 </Stack>
             </Stack>
-            <Stack direction={{xs:'column', sm:'row', md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
-                <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                    sx={{p:3,
-                        borderRadius:'5px',
-                        bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                        minWidth:'100px',
-                        minHeight:'100px',
-                        transition: '0.6s ease-in', 
-                        '&:hover': {
-                        boxShadow: 15,
-                        bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                        minWidth:'105px',
-                        minHeight:'105px',
-                        },
-                    }} 
-                    boxShadow={2}
-                    >
-                        <Icon icon={'material-symbols:workspace-premium-outline'} fontSize={'2rem'}></Icon>
-                        <Typography>Certificações</Typography>
-                        <Typography>texto</Typography>
-                </Stack>
-            <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                sx={{p:3,
-                    borderRadius:'5px',
-                    bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                    minWidth:'100px',
-                    minHeight:'100px',
-                    transition: '0.6s ease-in', 
-                    '&:hover': {
-                    boxShadow: 15,
-                    bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                    minWidth:'105px',
-                    minHeight:'105px',
-                        },
-                    }}
-                    boxShadow={2}
-                    >
-                        <Icon icon={'qlementine-icons:target-16'} fontSize={'2rem'}></Icon>
-                        <Typography>Foco em UX</Typography>
-                        <Typography>texto</Typography>
-                </Stack>
-            </Stack>
-        
         </Stack>
-        </Stack>
-        </Stack>
-
     </Box>
+
     {/* Footer */}
     <Stack p={5} bgcolor={'rgb(250,2,2)'}>
-
     </Stack>
     </Box>
 
