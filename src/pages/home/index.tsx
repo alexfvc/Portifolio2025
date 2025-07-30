@@ -3,8 +3,11 @@ import { Icon } from "@iconify/react"
 import cenix from '../../assets/images/cenix.png';
 import profile from '../../assets/images/Profile.jpg'
 import usePrimaryColors from '../../theme/colors';
-import { alpha, useTheme } from '@mui/system';
+import { alpha, Grid, useTheme } from '@mui/system';
 import HomeIntroSectionComponent from '../../components/intro-Section';
+import HomeCardComponent from '../../components/card';
+import HomeCardSkillTagComponent from '../../components/card/skillTag';
+import HomeTableGridComponent from '../../components/table-grid/tableGrid';
 
 
 
@@ -123,7 +126,7 @@ const Home = () =>{
         </Button>
         <Typography
         variant='h5' color='white' textAlign={'center'} py={2}
-            >Transformo ideias em soluções digitais inovadoras com mais de 5 anos de experiência em desenvolvimento web.</Typography>          
+            >Dou vida a ideias, criando soluções digitais inovadoras com desenvolvimento web.</Typography>          
         <Stack direction={{xs:'column',sm:'column',md:'row'}} spacing={3}>
             <Button 
                 variant='contained' 
@@ -156,7 +159,7 @@ const Home = () =>{
 
     {/* About */}
     <Box p={3} my={6} id={'about'} sx={{scrollMarginTop: {xs:175, sm:175, md:100}}}>  
-        <Stack direction={{sx:'column', md:'column'}} alignItems={'center'}  spacing={2}>
+        <Stack direction={'column'} alignItems={'center'}  spacing={2}>
             <HomeIntroSectionComponent title='Sobre Mim'>   
                 <>
                     <p> Sempre tive uma forte inclinação pelas ciências exatas. No ensino fundamental, me encantava especialmente com geometria. Mais tarde, no cursinho pré-vestibular, foi a física que conquistou minha atenção de forma definitiva. Ingressei no curso de Física na Universidade de Brasília (UnB).
@@ -169,109 +172,32 @@ const Home = () =>{
                     </p> 
                 </> 
             </HomeIntroSectionComponent>
-
-            <Stack direction={{xs:'column',md:'row'}} alignItems={'center'} spacing={{xs:2, md:4}}>
-                <Stack direction={{xs:'column',sm:'row',md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
-                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={2}
-                        sx={{
-                            p: 3,
-                            borderRadius: '5px',
-                            bgcolor: alpha('rgb(224, 224, 224)', 0.3),
-                            width: '175px',
-                            height: '175px',
-                            transition: '0.6s ease-in',
-                            '&:hover': {
-                            boxShadow: 15,
-                            bgcolor: alpha('rgb(224, 224, 224)', 0.1),
-                            width: '185px',
-                            height: '185px',
-                        },
-                        }}
-                        boxShadow={2}
+            <HomeTableGridComponent>
+                    <HomeCardComponent 
+                        iconPrimary='streamline-ultimate:programming-hold-code-2-bold' 
+                        title='5+ Anos' 
+                        subtitle='de muito estudo'
                         >
-                            <Icon icon={'streamline-ultimate:programming-hold-code-2-bold'}
-                                fontSize={'2rem'}
-                                color={theme.palette.primary.main} ></Icon>
-                            <Typography fontWeight={'bold'}>5+ Anos</Typography>
-                            <Typography>de muito estudo</Typography>
-                    </Stack>
-                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={2}
-                        sx={{
-                            p: 3,
-                            borderRadius: '5px',
-                            bgcolor: alpha('rgb(224, 224, 224)', 0.3),
-                            width: '175px',
-                            height: '175px',
-                            transition: '0.6s ease-in',
-                            '&:hover': {
-                            boxShadow: 15,
-                            bgcolor: alpha('rgb(224, 224, 224)', 0.1),
-                            width: '185px',
-                            height: '185px',
-                            },
-                        }}
-                        boxShadow={2}
-                        >
-                            <Icon icon={'ix:projects'} 
-                                fontSize={'2rem'}
-                                color={theme.palette.primary.main}></Icon>
-                            <Typography fontWeight={'bold'}>15+ Projetos</Typography>
-                            <Typography>No GitHub </Typography>  
-                            <Typography>1 em produção </Typography>                  
-                    </Stack>
-                </Stack>
-                <Stack direction={{xs:'column', sm:'row', md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
-                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={2}
-                        sx={{
-                            p: 3,
-                            borderRadius: '5px',
-                            bgcolor: alpha('rgb(224, 224, 224)', 0.3),
-                            width: '175px',
-                            height: '175px',
-                            transition: '0.6s ease-in',
-                            '&:hover': {
-                            boxShadow: 15,
-                            bgcolor: alpha('rgb(224, 224, 224)', 0.1),
-                            width: '185px',
-                            height: '185px',
-                            },
-                        }} 
-                        boxShadow={2}
-                        >
-                            <Icon icon={'material-symbols:workspace-premium-outline'} 
-                            fontSize={'2rem'}
-                            color={theme.palette.primary.main}></Icon>
-                            <Typography fontWeight={'bold'}>Certificações</Typography>
-                            <Typography>Ciência de dados</Typography>
-                            <Typography>desenvolvimento .Net</Typography>
-
-                    </Stack>
-                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={2}
-                        sx={{
-                            p: 3,
-                            borderRadius: '5px',
-                            bgcolor: alpha('rgb(224, 224, 224)', 0.3),
-                            width: '175px',
-                            height: '175px',
-                            transition: '0.6s ease-in',
-                            '&:hover': {
-                            boxShadow: 15,
-                            bgcolor: alpha('rgb(224, 224, 224)', 0.1),
-                            width: '185px',
-                            height: '185px',
-                        },
-                        }}
-                        boxShadow={2}
-                        >
-                            <Icon icon={'qlementine-icons:target-16'} 
-                            fontSize={'2rem'}
-                            color={theme.palette.primary.main}></Icon>
-                            <Typography fontWeight={'bold'}>Foco </Typography>
-                            <Typography>Código limpo</Typography>
-                            <Typography>Arquitetura limpa</Typography>
-                    </Stack>
-                </Stack>
-            </Stack>
+                    </HomeCardComponent>
+                    <HomeCardComponent 
+                        iconPrimary='ix:projects' 
+                        title='15+ Projetos' 
+                        subtitle='No GitHub' 
+                        subtitle2='1 em produção'>
+                    </HomeCardComponent>      
+                    <HomeCardComponent 
+                        iconPrimary='material-symbols:workspace-premium-outline' 
+                        title='Certificações' 
+                        subtitle='Ciência de dados' 
+                        subtitle2='desenvolvimento .Net' >
+                    </HomeCardComponent>
+                    <HomeCardComponent 
+                        iconPrimary='qlementine-icons:target-16' 
+                        title='Foco' 
+                        subtitle='Código limpo' 
+                        subtitle2='Arquitetura limpa' >
+                    </HomeCardComponent>
+            </HomeTableGridComponent>                   
         </Stack>
     </Box>
 
@@ -334,108 +260,43 @@ const Home = () =>{
 
     {/* Skills */}
     <Box p={3} my={6} id={'skills'} sx={{scrollMarginTop: {xs:175, sm:175, md:100}}}>  
-        <Stack direction={{sx:'column',sm:'row', md:'column'}} alignItems={'center'} spacing={2}>
+        <Stack direction={'column'} alignItems={'center'} spacing={2}>
             <HomeIntroSectionComponent title='Habilidades Técnicas'>
                 <>
                     <p>
                         Tecnologias e ferramentas que procuro dominar para criar soluções completas e eficientes.
                     </p>
                 </>
+                
 
             </HomeIntroSectionComponent>
 
-            <Stack direction={{xs:'column',md:'row'}} alignItems={'center'} spacing={{xs:2, md:4}}>
-                <Stack direction={{xs:'column',sm:'row',md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
-                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                        sx={{
-                                p: 3,
-                                borderRadius: '5px',
-                                bgcolor: alpha('rgb(224, 224, 224)', 0.3),
-                                width: '175px',
-                                height: '175px',
-                                transition: '0.6s ease-in',
-                                '&:hover': {
-                                boxShadow: 15,
-                                bgcolor: alpha('rgb(224, 224, 224)', 0.1),
-                                width: '185px',
-                                height: '185px',                    
-                            },
-                        }}
-                        boxShadow={2}
-                        >
-                            <Box >
-                                <Icon icon="mdi:code-block-html" fontSize="2rem" color={theme.palette.primary.main} />
-                            </Box>
-                            <Typography fontWeight={'bold'}>Frontend</Typography>
-                            <Typography>texto</Typography>
-                    </Stack>
-                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                        sx={{
-                                p: 3,
-                                borderRadius: '5px',
-                                bgcolor: alpha('rgb(224, 224, 224)', 0.3),
-                                width: '175px',
-                                height: '175px',
-                                transition: '0.6s ease-in',
-                                '&:hover': {
-                                boxShadow: 15,
-                                bgcolor: alpha('rgb(224, 224, 224)', 0.1),
-                                width: '185px',
-                                height: '185px',
-                            },
-                        }}
-                        boxShadow={2}
-                        >
-                            <Icon icon="famicons:server-outline" fontSize="2rem" color={theme.palette.primary.main}></Icon>
-                            <Typography fontWeight={'bold'}>Backend</Typography>
-                            <Typography>texto</Typography>                    
-                    </Stack>
-                </Stack>
-                <Stack direction={{xs:'column', sm:'row', md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
-                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                        sx={{   
-                                p:3,
-                                borderRadius: '5px',
-                                bgcolor: alpha('rgb(224, 224, 224)', 0.3),
-                                width: '175px',
-                                height: '175px',
-                                transition: '0.6s ease-in',
-                                '&:hover': {
-                                boxShadow: 15,
-                                bgcolor: alpha('rgb(224, 224, 224)', 0.1),
-                                width: '185px',
-                                height: '185px',
-                            },
-                        }} 
-                        boxShadow={2}
-                        >
-                            <Icon icon="fluent:data-line-32-regular" fontSize="2rem" color={theme.palette.primary.main}></Icon>
-                            <Typography fontWeight={'bold'}>Análise de dados</Typography>
-                            <Typography>texto</Typography>
-                    </Stack>
-                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                        sx={{
-                                p: 3,
-                                borderRadius: '5px',
-                                bgcolor: alpha('rgb(224, 224, 224)', 0.3),
-                                width: '175px',
-                                height: '175px',
-                                transition: '0.6s ease-in',
-                                '&:hover': {
-                                boxShadow: 15,
-                                bgcolor: alpha('rgb(224, 224, 224)', 0.1),
-                                width: '185px',
-                                height: '185px',
-                            },
-                        }}
-                        boxShadow={2}
-                        >
-                            <Icon icon="iconoir:brain-research" fontSize="2rem" color={theme.palette.primary.main}></Icon>
-                            <Typography fontWeight={'bold'}>Geral</Typography>
-                            <Typography>Arquitetura limpa, código limpo, github, azure.</Typography>
-                    </Stack>
-                </Stack>
-            </Stack>
+            <HomeTableGridComponent>
+                    <HomeCardComponent iconPrimary='mdi:code-block-html' iconBg={true} title='Frontend' >
+                        <HomeCardSkillTagComponent title={'JavaScript'} />
+                        <HomeCardSkillTagComponent title={'React'} />
+                        <HomeCardSkillTagComponent title={'HTML'} />
+                        <HomeCardSkillTagComponent title={'CSS'} />
+                    </HomeCardComponent>    
+                    <HomeCardComponent iconPrimary='famicons:server-outline' iconBg={true} title='Backend' >
+                        <HomeCardSkillTagComponent title={'C#'} />
+                        <HomeCardSkillTagComponent title={'.NET'} />
+                        <HomeCardSkillTagComponent title={'Entity Framework'} />
+                    </HomeCardComponent>    
+                    
+                    <HomeCardComponent iconPrimary='fluent:data-line-32-regular' iconBg={true} title='Análise de dados' >
+                        <HomeCardSkillTagComponent title={'Python'} />
+                        <HomeCardSkillTagComponent title={'Pandas'} />
+                        <HomeCardSkillTagComponent title={'MatPlotLib'} />
+                        <HomeCardSkillTagComponent title={'Jupyter Notebook'} />    
+                    </HomeCardComponent>    
+                    <HomeCardComponent iconPrimary='iconoir:brain-research' iconBg={true} title='Geral'>
+                        <HomeCardSkillTagComponent title={'Arquitetura limpa'} />
+                        <HomeCardSkillTagComponent title={'Código limpo'} />
+                        <HomeCardSkillTagComponent title={'Github'} />
+                        <HomeCardSkillTagComponent title={'Azure'} /> 
+                    </HomeCardComponent>    
+            </HomeTableGridComponent>
         </Stack>
     </Box>
 
@@ -635,7 +496,8 @@ const Home = () =>{
                 </Stack>
             </Stack>
         </Stack>
-    </Box>
+    </Box>   
+   
 
     {/* Footer */}
     <Stack p={5} bgcolor={'rgb(250,2,2)'}>
