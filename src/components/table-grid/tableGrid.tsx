@@ -9,7 +9,7 @@ const HomeTableGridComponent = ({children}:ITableGrid) => {
         <Stack display={'flex'} maxWidth={{sm:600,md:'100%'}} justifyContent={'center'} alignItems={'center'} spacing={2}   py={2}>
             <Grid container justifyContent={'center'} spacing={{xs:5, md:5}}   p={3} >
                     {React.Children.map(children, (child, index) => (
-                        <Grid item display={'flex'}  key={index}>
+                        <Grid display={'flex'}  key={index}>
                             {child}
                         </Grid>
                     ))}

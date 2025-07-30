@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react"
 import cenix from '../../assets/images/cenix.png';
 import profile from '../../assets/images/Profile.jpg'
 import usePrimaryColors from '../../theme/colors';
-import { alpha, Grid, useTheme } from '@mui/system';
+import { alpha, useTheme } from '@mui/system';
 import HomeIntroSectionComponent from '../../components/intro-Section';
 import HomeCardComponent from '../../components/card';
 import HomeCardSkillTagComponent from '../../components/card/skillTag';
