@@ -16,6 +16,7 @@ const HomeCardComponent = ({iconPrimary, iconBg, title,subtitle,subtitle2, child
                 justifyContent={'center'} 
                 alignItems={'center'} 
                 spacing={1}
+                maxWidth={300}                
                 sx={{
                         p:3,
                         borderRadius: '5px',
@@ -23,6 +24,7 @@ const HomeCardComponent = ({iconPrimary, iconBg, title,subtitle,subtitle2, child
                         transition: '0.6s ease-in',
                         minHeight: '160px',
                         minWidth: '160px',
+                        
                         '&:hover': {
                         boxShadow: 15,
                         bgcolor: alpha('rgb(224, 224, 224)', 0.1),

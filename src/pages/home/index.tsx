@@ -273,29 +273,30 @@ const Home = () =>{
             </HomeIntroSectionComponent>
 
             <HomeTableGridComponent>
+                    <HomeCardComponent iconPrimary='famicons:server-outline' iconBg={true} title='Backend' >
+                        <HomeCardSkillTagComponent title={'C#'} />
+                        <HomeCardSkillTagComponent title={'.NET'} />
+                        <HomeCardSkillTagComponent title={'Entity Framework'} />
+                    </HomeCardComponent>    
                     <HomeCardComponent iconPrimary='mdi:code-block-html' iconBg={true} title='Frontend' >
                         <HomeCardSkillTagComponent title={'JavaScript'} />
                         <HomeCardSkillTagComponent title={'React'} />
                         <HomeCardSkillTagComponent title={'HTML'} />
                         <HomeCardSkillTagComponent title={'CSS'} />
                     </HomeCardComponent>    
-                    <HomeCardComponent iconPrimary='famicons:server-outline' iconBg={true} title='Backend' >
-                        <HomeCardSkillTagComponent title={'C#'} />
-                        <HomeCardSkillTagComponent title={'.NET'} />
-                        <HomeCardSkillTagComponent title={'Entity Framework'} />
-                    </HomeCardComponent>    
                     
                     <HomeCardComponent iconPrimary='fluent:data-line-32-regular' iconBg={true} title='Análise de dados' >
                         <HomeCardSkillTagComponent title={'Python'} />
                         <HomeCardSkillTagComponent title={'Pandas'} />
                         <HomeCardSkillTagComponent title={'MatPlotLib'} />
-                        <HomeCardSkillTagComponent title={'Jupyter Notebook'} />    
+                        <HomeCardSkillTagComponent title={'Selenium'} /> 
                     </HomeCardComponent>    
                     <HomeCardComponent iconPrimary='iconoir:brain-research' iconBg={true} title='Geral'>
                         <HomeCardSkillTagComponent title={'Arquitetura limpa'} />
                         <HomeCardSkillTagComponent title={'Código limpo'} />
                         <HomeCardSkillTagComponent title={'Github'} />
-                        <HomeCardSkillTagComponent title={'Azure'} /> 
+                        <HomeCardSkillTagComponent title={'Web Scraping'} />
+                        <HomeCardSkillTagComponent title={'Automação'} /> 
                     </HomeCardComponent>    
             </HomeTableGridComponent>
         </Stack>
