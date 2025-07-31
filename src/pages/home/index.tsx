@@ -174,7 +174,7 @@ const Home = () =>{
                     </p> 
                 </> 
             </HomeIntroSectionComponent>
-            <HomeTableGridComponent>
+            <HomeTableGridComponent cardOrblock={'card'}>
                     <HomeCardComponent 
                         iconPrimary='streamline-ultimate:programming-hold-code-2-bold' 
                         title='5+ Anos' 
@@ -205,7 +205,7 @@ const Home = () =>{
 
     {/* Experiences */}
     <Box p={3} my={6} id={'experiences'} sx={{scrollMarginTop: {xs:175, sm:175, md:100}}}>
-        <HomeIntroSectionComponent title='Experiências Profissionais' >
+        <HomeIntroSectionComponent title='Experiências Profissionais' centerText={true} >
             <> 
                 <p>
                     Uma jornada de crescimento e aprendizado constante no mundo da tecnologia.
@@ -213,7 +213,7 @@ const Home = () =>{
             </>
         </HomeIntroSectionComponent>
 
-        <HomeTableGridComponent >
+        <HomeTableGridComponent cardOrblock={'block'}>
             <HomeBlockComponent 
                 iconTitle={ceniximg}
                 title={'Cenix'} 
@@ -222,7 +222,16 @@ const Home = () =>{
                 data={'/2024  ...  Present'}
                 iconB={'icon-park-outline:local'}
                 local={'Agricola 2 Wermann'}
-                explanation={<p>Sou um desenvolvedor apaixonado por criar experiências digitais excepcionais. Com mais de 5 anos de experiência, especializei-me em desenvolvimento full stack, sempre buscando as melhores práticas e tecnologias mais recentes.</p>}>
+                explanation={<>
+                    <p>Durante um treinamento intensivo de 6 meses, estudei C# e JavaScript com foco em desenvolvimento full stack. 
+                        Como parte prática, desenvolvi um sistema de controle de estoque para uma empresa fictícia, criando o backend em C# com Entity Framework, 
+                        aplicando princípios de Clean Code, arquitetura limpa e os fundamentos do SOLID, como responsabilidade única e segregação de interfaces.</p>
+                    <p>No frontend, utilizei React com Material UI, garantindo uma interface responsiva e acessível em diferentes dispositivos. 
+                        O projeto foi construído com atenção especial à componentização, clareza do código e escalabilidade.</p>
+                    <p>Ao final do treinamento, fui encarregado de liderar o desenvolvimento de um sistema real, chamado Hephaestus, 
+                        responsável por organizar a fila de atendimento de veículos na oficina e lavagem da empresa. 
+                        Esse desafio consolidou meu aprendizado e aprofundou minha experiência com boas práticas de desenvolvimento backend em um ambiente real.</p>
+                </>}>
             </HomeBlockComponent>
             <></>
         </HomeTableGridComponent>
@@ -231,7 +240,7 @@ const Home = () =>{
     {/* Skills */}
     <Box p={3} my={6} id={'skills'} sx={{scrollMarginTop: {xs:175, sm:175, md:100}}}>  
         <Stack direction={'column'} alignItems={'center'} spacing={2}>
-            <HomeIntroSectionComponent title='Habilidades Técnicas'>
+            <HomeIntroSectionComponent title='Habilidades Técnicas' centerText={true}>
                 <>
                     <p>
                         Tecnologias e ferramentas que procuro dominar para criar soluções completas e eficientes.
@@ -239,7 +248,7 @@ const Home = () =>{
                 </>
             </HomeIntroSectionComponent>
 
-            <HomeTableGridComponent>
+            <HomeTableGridComponent cardOrblock={'card'}>
                     <HomeCardComponent iconPrimary='famicons:server-outline' iconBg={true} title='Backend' >
                         <HomeCardSkillTagComponent title={'C#'} />
                         <HomeCardSkillTagComponent title={'.NET'} />
@@ -292,18 +301,20 @@ const Home = () =>{
                 </>
             </HomeIntroSectionComponent>
 
-            <HomeTableGridComponent >
+            <HomeTableGridComponent cardOrblock={'block'} >
                 <HomeBlockComponent 
-                    title=''
-                    iconTitle={''}
+                    title='Backend Hephaestus'
+                    iconTitle={ceniximg}
                     bgimage={hephaestusimage}
-                    explanation={<p>Plataforma completa de e-commerce com painel administrativo, sistema de pagamentos e gestão de estoque. Desenvolvida com foco em performance e experiência do usuário.</p>}>
+                    explanation={
+                        <p>Plataforma completa de e-commerce com painel administrativo, sistema de pagamentos e gestão de estoque. 
+                            Desenvolvida com foco em performance e experiência do usuário.</p>}>
                 </HomeBlockComponent>
                 <HomeBlockComponent 
-                    
-                    
-
-                    explanation={<p>Aplicativo de gerenciamento de tarefas com recursos de colaboração em tempo real, notificações e relatórios analíticos para equipes.</p>}>
+                    title='texto'
+                    iconTitle={ceniximg}
+                    explanation={
+                        <p>Aplicativo de gerenciamento de tarefas com recurso</p>}>
                 </HomeBlockComponent>
 
 
