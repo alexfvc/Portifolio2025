@@ -1,6 +1,5 @@
 import { Button, Stack, Typography, Box, Avatar } from '@mui/material';
 import { Icon } from "@iconify/react"
-import cenix from '../../assets/images/cenix.png';
 import profile from '../../assets/images/Profile.jpg'
 import usePrimaryColors from '../../theme/colors';
 import { alpha, useTheme } from '@mui/system';
@@ -8,6 +7,9 @@ import HomeIntroSectionComponent from '../../components/intro-Section';
 import HomeCardComponent from '../../components/card';
 import HomeCardSkillTagComponent from '../../components/card/skillTag';
 import HomeTableGridComponent from '../../components/table-grid/tableGrid';
+import HomeBlockComponent from '../../components/block/block';
+import hephaestusimage from '../../assets/images/Hephaestus.png'
+import ceniximg from '../../assets/images/cenix.png'
 
 
 
@@ -211,51 +213,19 @@ const Home = () =>{
             </>
         </HomeIntroSectionComponent>
 
-        <Box 
-            boxShadow={2}
-            sx={{   
-                p:3,
-                borderRadius:'5px',
-                bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                transition: '0.6s ease-in', 
-                '&:hover': {
-                boxShadow: 15,
-                bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                },
-            }}>
-            <Stack pl={{xs:0,md:3}} pr={{xs:0,md:5}}>
-                <Stack direction={{xs:'column',md:'row'}}  spacing={{xs:2,md:3}} py={2} justifyContent={'space-between'}>
-                    <Stack display={'block'} justifyContent={'center'} alignItems={'center'} spacing={1} >
-                        <Stack direction={'row'} spacing={2}>
-                            <Avatar src={cenix} />
-                            <Typography variant='h3'>Cenix!</Typography>
-                        </Stack>
-                        <Typography variant='h6' color={primaryColors.primary.dark}>Programador Full Stack Jr</Typography>
-                    </Stack>
-                    <Stack display={'block'} justifyContent={'center'} alignItems={'center'} py={1} spacing={1}>
-                        <Stack direction={'row'} spacing={2} alignContent={'center'}>
-                            <Icon  icon={'stash:data-date-light'} fontSize={'40px'} color={alpha('rgba(100,100,100)',1)}/>
-                            <Typography variant='h5' color='text.secondary'>/2024  ...  Present</Typography>
-                        </Stack>
-                        <Stack direction={'row'} spacing={2}>
-                            <Icon icon={'icon-park-outline:local'} fontSize={'35px'} color={alpha('rgba(100,100,100)',1)} />
-                            <Typography variant='h5' color='text.secondary'>Agricola 2 Wermann</Typography>
-                        </Stack>
-                    </Stack> 
-                </Stack>
-                <Stack>
-                    <Typography alignContent={'flex-start'} variant='h6' textAlign={'justify'} color='text.secondary'>
-                        <p> 
-                        Participei de um treinamento prático em C#, com foco em Clean Architecture e boas práticas de código, onde desenvolvi uma API para o controle de estoque de uma empresa. Ao final do treinamento, construí o frontend utilizando JavaScript, React e componentes do Material UI.
-                        </p>
-                        <p>
-                        Após o treinamento, desenvolvi do zero um sistema completo para organização de filas de oficina e lavagem de veículos da empresa, implementando o backend em C# com arquitetura limpa. Esse sistema está atualmente em produção e em uso pela equipe.
-                        </p>                     
-                    </Typography>
-                </Stack>
-            </Stack>
-
-        </Box>
+        <HomeTableGridComponent >
+            <HomeBlockComponent 
+                iconTitle={ceniximg}
+                title={'Cenix'} 
+                subtitle='Desenvolvedor Full Stack JR'
+                iconA={'stash:data-date-light'}
+                data={'/2024  ...  Present'}
+                iconB={'icon-park-outline:local'}
+                local={'Agricola 2 Wermann'}
+                explanation={<p>Sou um desenvolvedor apaixonado por criar experiências digitais excepcionais. Com mais de 5 anos de experiência, especializei-me em desenvolvimento full stack, sempre buscando as melhores práticas e tecnologias mais recentes.</p>}>
+            </HomeBlockComponent>
+            <></>
+        </HomeTableGridComponent>
     </Box>
 
     {/* Skills */}
@@ -267,8 +237,6 @@ const Home = () =>{
                         Tecnologias e ferramentas que procuro dominar para criar soluções completas e eficientes.
                     </p>
                 </>
-                
-
             </HomeIntroSectionComponent>
 
             <HomeTableGridComponent>
@@ -298,104 +266,48 @@ const Home = () =>{
                         <HomeCardSkillTagComponent title={'Automação'} /> 
                     </HomeCardComponent>    
             </HomeTableGridComponent>
+            <Stack direction={'column'} spacing={-4} maxWidth={'90%'}>
+                    <Typography fontWeight={'bold'} variant={'h6'} textAlign={'center'}>
+                        <p>
+                            Sempre aprendendo e evoluindo
+                        </p>
+                    </Typography>
+                    <Typography variant='h6' color='text.secondary' textAlign={'center'}>
+                        <p>
+                        Acredito que o aprendizado contínuo é fundamental na área de tecnologia. Estou sempre explorando novas ferramentas e metodologias para melhorar a qualidade dos projetos que desenvolvo.
+                        </p>
+                    </Typography>
+            </Stack>
         </Stack>
     </Box>
 
     {/* Projects */}
-    <Box p={3} my={6} id={'projects'} bgcolor={alpha('rgb(250,0,0)',.1)} sx={{scrollMarginTop: {xs:175, sm:175, md:100}}}>
-        <Stack direction={{sx:'column',sm:'row', md:'column'}} alignItems={'center'}  spacing={2}>
+    <Box p={3} my={6} id={'projects'}  sx={{scrollMarginTop: {xs:175, sm:175, md:100}}}>
+        <Stack direction={{sx:'column',sm:'column', md:'column'}} alignItems={'center'}  spacing={2}>
             <HomeIntroSectionComponent title='Projetos em Destaque' centerText={true}>
                 <>
                     <p>
-                        Sou um desenvolvedor apaixonado por criar experiências digitais excepcionais. Com mais de 5 anos de experiência, especializei-me em desenvolvimento full stack, sempre buscando as melhores práticas e tecnologias mais recentes.
+                        Uma seleção dos meus trabalhos mais recentes e significativos
                     </p>
                 </>
             </HomeIntroSectionComponent>
 
-            <Stack direction={{xs:'column',md:'row'}} alignItems={'center'} spacing={{xs:2, md:4}}>
-                <Stack direction={{xs:'column',sm:'row',md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
-                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                        sx={{p:3,
-                            borderRadius:'5px',
-                            bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                            minHeight:'100px',
-                            minWidth:'100px',
-                            transition: '0.6s ease-in', 
-                            '&:hover': {
-                            boxShadow: 15,
-                            bgcolor:alpha('rgb(224, 224, 224)',0.1),                    
-                            },
-                        }}
-                        boxShadow={2}
-                        >
-                            <Icon icon={'streamline-ultimate:programming-hold-code-2-bold'} fontSize={'2rem'}></Icon>
-                            <Typography>5+ Anos</Typography>
-                            <Typography>texto</Typography>
-                </Stack>
-                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                        sx={{p:3,
-                            borderRadius:'5px',
-                            bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                            minWidth:'100px',
-                            minHeight:'100px',
-                            transition: '0.6s ease-in', 
-                            '&:hover': {
-                            boxShadow: 15,
-                            bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                            minWidth:'105px',
-                            minHeight:'105px',
-                            },
-                        }}
-                        boxShadow={2}
-                        >
-                            <Icon icon={'ix:projects'} fontSize={'2rem'}></Icon>
-                            <Typography>20+ Projetos</Typography>
-                            <Typography>texto</Typography>                    
-                    </Stack>
-                </Stack>
-                <Stack direction={{xs:'column', sm:'row', md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
-                    <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                        sx={{p:3,
-                            borderRadius:'5px',
-                            bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                            minWidth:'100px',
-                            minHeight:'100px',
-                            transition: '0.6s ease-in', 
-                            '&:hover': {
-                            boxShadow: 15,
-                            bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                            minWidth:'105px',
-                            minHeight:'105px',
-                            },
-                        }} 
-                        boxShadow={2}
-                        >
-                            <Icon icon={'material-symbols:workspace-premium-outline'} fontSize={'2rem'}></Icon>
-                            <Typography>Certificações</Typography>
-                            <Typography>texto</Typography>
-                    </Stack>
-                <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                    sx={{p:3,
-                        borderRadius:'5px',
-                        bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                        minWidth:'100px',
-                        minHeight:'100px',
-                        transition: '0.6s ease-in', 
-                        '&:hover': {
-                        boxShadow: 15,
-                        bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                        minWidth:'105px',
-                        minHeight:'105px',
-                            },
-                        }}
-                        boxShadow={2}
-                        >
-                            <Icon icon={'qlementine-icons:target-16'} fontSize={'2rem'}></Icon>
-                            <Typography>Foco em UX</Typography>
-                            <Typography>texto</Typography>
-                    </Stack>
-                </Stack>
-            </Stack>
+            <HomeTableGridComponent >
+                <HomeBlockComponent 
+                    title=''
+                    iconTitle={''}
+                    bgimage={hephaestusimage}
+                    explanation={<p>Plataforma completa de e-commerce com painel administrativo, sistema de pagamentos e gestão de estoque. Desenvolvida com foco em performance e experiência do usuário.</p>}>
+                </HomeBlockComponent>
+                <HomeBlockComponent 
+                    
+                    
+
+                    explanation={<p>Aplicativo de gerenciamento de tarefas com recursos de colaboração em tempo real, notificações e relatórios analíticos para equipes.</p>}>
+                </HomeBlockComponent>
+
+
+            </HomeTableGridComponent>         
         </Stack>
     </Box>
 
@@ -410,92 +322,7 @@ const Home = () =>{
                 </>
             </HomeIntroSectionComponent>
             
-            <Stack direction={{xs:'column',md:'row'}} alignItems={'center'} spacing={{xs:2, md:4}}>
-                <Stack direction={{xs:'column',md:'row'}} alignItems={'center'} spacing={{xs:2, md:4}}>
-                    <Stack direction={{xs:'column',sm:'row',md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
-                        <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                            sx={{p:3,
-                                borderRadius:'5px',
-                                bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                                minHeight:'100px',
-                                minWidth:'100px',
-                                transition: '0.6s ease-in', 
-                                '&:hover': {
-                                boxShadow: 15,
-                                bgcolor:alpha('rgb(224, 224, 224)',0.1),                    
-                                },
-                            }}
-                            boxShadow={2}
-                            >
-                                <Icon icon={'streamline-ultimate:programming-hold-code-2-bold'} fontSize={'2rem'}></Icon>
-                                <Typography>5+ Anos</Typography>
-                                <Typography>texto</Typography>
-                        </Stack>
-                        <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                            sx={{p:3,
-                                borderRadius:'5px',
-                                bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                                minWidth:'100px',
-                                minHeight:'100px',
-                                transition: '0.6s ease-in', 
-                                '&:hover': {
-                                boxShadow: 15,
-                                bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                                minWidth:'105px',
-                                minHeight:'105px',
-                                },
-                            }}
-                            boxShadow={2}
-                            >
-                                <Icon icon={'ix:projects'} fontSize={'2rem'}></Icon>
-                                <Typography>20+ Projetos</Typography>
-                                <Typography>texto</Typography>                    
-                        </Stack>
-                    </Stack>
-                    <Stack direction={{xs:'column', sm:'row', md:'row',lg:'row'}} alignItems={'center'} justifyContent={'center'} spacing={{xs:2, md:4}}>
-                        <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                            sx={{p:3,
-                                borderRadius:'5px',
-                                bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                                minWidth:'100px',
-                                minHeight:'100px',
-                                transition: '0.6s ease-in', 
-                                '&:hover': {
-                                boxShadow: 15,
-                                bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                                minWidth:'105px',
-                                minHeight:'105px',
-                                },
-                            }} 
-                            boxShadow={2}
-                            >
-                                <Icon icon={'material-symbols:workspace-premium-outline'} fontSize={'2rem'}></Icon>
-                                <Typography>Certificações</Typography>
-                                <Typography>texto</Typography>
-                        </Stack>
-                        <Stack display={'flex'} justifyContent={'center'} alignItems={'center'} spacing={1}
-                            sx={{p:3,
-                                borderRadius:'5px',
-                                bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                                minWidth:'100px',
-                                minHeight:'100px',
-                                transition: '0.6s ease-in', 
-                                '&:hover': {
-                                boxShadow: 15,
-                                bgcolor:alpha('rgb(224, 224, 224)',0.1),
-                                minWidth:'105px',
-                                minHeight:'105px',
-                                    },
-                                }}
-                            boxShadow={2}
-                            >
-                                <Icon icon={'qlementine-icons:target-16'} fontSize={'2rem'}></Icon>
-                                <Typography>Foco em UX</Typography>
-                                <Typography>texto</Typography>
-                        </Stack>
-                    </Stack>
-                </Stack>
-            </Stack>
+            
         </Stack>
     </Box>   
    
