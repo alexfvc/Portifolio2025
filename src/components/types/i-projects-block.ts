@@ -5,7 +5,7 @@ export interface iHomeProjectsBlockConponentProps{
     iconTitle?: string;
     title: string;
     subtitle?: string;
-    data?: string; 
-    local?: string;
+    iconA?:string;
+    iconB?:string;
     textAbout?: JSX.Element;
 }

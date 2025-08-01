@@ -309,11 +309,11 @@ const Home = () =>{
 
             <HomeTableGridComponent cardOrblock={'block'} >
                 <HomeProjectsBlockComponent 
-                    title={'TESTE'} 
+                    title={'Hephaestus'} 
                     headerImage={hephaestusImage}
-                    data='/2024  ...  Present'
-                    local='Agricola Werhmann'
-                    subtitle='Desvolvedor Full Stack JR'
+                    iconA='devicon-plain:csharp'
+                    iconB='devicon-plain:entityframeworkcore'
+                    subtitle=''
                     iconTitle={ceniximg}
                     textAbout={
                         <><p>Desenvolvi o sistema Hephaestus, 
