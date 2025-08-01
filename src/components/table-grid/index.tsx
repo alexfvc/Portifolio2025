@@ -1,4 +1,4 @@
-import { Grid, Stack } from "@mui/material"
+import { Grid, Stack } from "@mui/material";
 import type { ITableGrid } from "../types/i-Table-Grid";
 import React from "react";
 
@@ -16,12 +16,12 @@ const HomeTableGridComponent = ({children, cardOrblock }:ITableGrid) => {
                             display={'flex'} 
                             flexDirection={'row'} 
                             key={index}
-                            size={{sm:6,md:3 ,lg:2}}
+                            size={{xs:12, sm:6,md:6 ,lg:3}}
                             width={'100%'}
                             >
                             {child}
                         </Grid>
-                    ))};
+                    ))}
                    </>)}
 
                     {(cardOrblock === 'block') && (<>

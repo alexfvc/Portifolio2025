@@ -1,15 +1,16 @@
 import { Button, Stack, Typography, Box, Avatar } from '@mui/material';
-import { Icon } from "@iconify/react"
+import { Icon } from "@iconify/react";
 import profile from '../../assets/images/Profile.jpg'
 import usePrimaryColors from '../../theme/colors';
 import { alpha, useTheme } from '@mui/system';
 import HomeIntroSectionComponent from '../../components/intro-Section';
 import HomeCardComponent from '../../components/card';
 import HomeCardSkillTagComponent from '../../components/card/skillTag';
-import HomeTableGridComponent from '../../components/table-grid/tableGrid';
-import HomeBlockComponent from '../../components/block/block';
-import hephaestusimage from '../../assets/images/Hephaestus.png'
-import ceniximg from '../../assets/images/cenix.png'
+import HomeTableGridComponent from '../../components/table-grid';
+import ceniximg from '../../assets/images/cenix.png';
+import HomeExperiencesBlockComponent from '../../components/experienceBlock';
+import HomeProjectsBlockComponent from '../../components/projectsBlock';
+import hephaestusImage from '../../assets/images/Hephaestus.png'
 
 
 
@@ -98,7 +99,6 @@ const Home = () =>{
         spacing={3}
         p={{xs:2,md:8}}
         bgcolor={primaryColors.primary.dark}
-
         pt={{xs:21, sm:25, md:15}}
         >
         <Box >   
@@ -123,7 +123,7 @@ const Home = () =>{
                     textTransform: 'uppercase'},
                     textTransform: 'None',
                 }}
-                >Desnvolvedor Full Stack
+                >Desenvolvedor Full Stack
             </Typography>          
         </Button>
         <Typography
@@ -165,13 +165,23 @@ const Home = () =>{
         <Stack direction={'column'} alignItems={'center'}  spacing={2}>
             <HomeIntroSectionComponent title='Sobre Mim'>   
                 <>
-                    <p> Sempre tive uma forte inclinação pelas ciências exatas. No ensino fundamental, me encantava especialmente com geometria. Mais tarde, no cursinho pré-vestibular, foi a física que conquistou minha atenção de forma definitiva. Ingressei no curso de Física na Universidade de Brasília (UnB).
+                    <p> Sempre tive uma forte inclinação pelas ciências exatas. No ensino fundamental, me encantava especialmente com geometria. Mais tarde, no cursinho pré-vestibular, 
+                        foi a física que conquistou minha atenção de forma definitiva. Ingressei no curso de Física na Universidade de Brasília (UnB).
                     </p>
-                    <p>Durante a graduação, iniciei um estágio no extinto Ministério da Previdência Social, onde tive meu primeiro contato prático com análise de dados, produzindo relatórios a partir de anuários estatísticos. Essa vivência se somou às atividades laboratoriais do curso, nas quais a coleta e análise de dados eram fundamentais. Cheguei a atuar como monitor voluntário em Física Experimental 4, ajudando colegas a compreender essas etapas. Mais adiante, me envolvi com o ensino por meio do PIBID (Programa Institucional de Bolsa de Iniciação à Docência), onde encontrei um novo propósito: a educação.
+                    <p>Durante a graduação, iniciei um estágio no extinto Ministério da Previdência Social, 
+                        onde tive meu primeiro contato prático com análise de dados, produzindo relatórios a partir de anuários estatísticos. Essa vivência se somou às atividades laboratoriais do curso, 
+                        nas quais a coleta e análise de dados eram fundamentais. Cheguei a atuar como monitor voluntário em Física Experimental 4, ajudando colegas a compreender essas etapas. Mais adiante, 
+                        me envolvi com o ensino por meio do PIBID (Programa Institucional de Bolsa de Iniciação à Docência), 
+                        onde encontrei um novo propósito: a educação.
                     </p>
-                    <p>Formei-me em Física em 2018. No mesmo ano, fui aprovado no concurso de professor efetivo do Estado de Minas Gerais. Atuo como docente e iniciei um mestrado profissional em ensino de física (MNPEF). No entanto, questões logísticas e financeiras relacionadas às viagens até o polo do curso me impediram de concluí-lo naquele momento.
+                    <p>Formei-me em Física em 2018. No mesmo ano, fui aprovado no concurso para professor efetivo do Estado de Minas Gerais. 
+                        Desde então, atuo como docente e iniciei um mestrado profissional em Ensino de Física (MNPEF), mas não concluí.
                     </p>
-                    <p>No fim de 2021, concluí cursos de Python e banco de dados, que reacenderam meu interesse pela tecnologia. Desde então, venho aprofundando meus conhecimentos na área de desenvolvimento de software. Atualmente, estou focado na atuação como desenvolvedor full stack, utilizando C# no backend e React com JavaScript no frontend. Tenho me dedicado à construção de projetos práticos, sempre buscando aplicar boas práticas de desenvolvimento, arquitetura limpa e integração entre sistemas. Estou em transição definitiva para a área de tecnologia, onde pretendo unir minha experiência com dados, minha vivência em ensino e minha paixão por resolver problemas de forma criativa e eficiente.
+                    <p>No fim de 2021, concluí cursos de Python e banco de dados, que reacenderam meu interesse pela tecnologia. Desde então, 
+                        venho aprofundando meus conhecimentos na área de desenvolvimento de software. Atualmente, estou focado na atuação como desenvolvedor full stack, 
+                        utilizando C# no backend e React com JavaScript no frontend. Tenho me dedicado à construção de projetos práticos, sempre buscando aplicar boas práticas de desenvolvimento, 
+                        arquitetura limpa e integração entre sistemas. Estou em transição definitiva para a área de tecnologia, onde pretendo unir minha experiência com dados, 
+                        minha vivência em ensino e minha paixão por resolver problemas de forma criativa e eficiente.
                     </p> 
                 </> 
             </HomeIntroSectionComponent>
@@ -215,26 +225,21 @@ const Home = () =>{
         </HomeIntroSectionComponent>
 
         <HomeTableGridComponent cardOrblock={'block'}>
-            <HomeBlockComponent 
-                iconTitle={ceniximg}
+            <HomeExperiencesBlockComponent 
                 title={'Cenix'} 
-                subtitle='Desenvolvedor Full Stack JR'
-                iconA={'stash:data-date-light'}
-                data={'/2024  ...  Present'}
-                iconB={'icon-park-outline:local'}
-                local={'Agricola 2 Wermann'}
-                explanation={<>
-                    <p>Durante um treinamento intensivo de 6 meses, estudei C# e JavaScript com foco em desenvolvimento full stack. 
-                        Como parte prática, desenvolvi um sistema de controle de estoque para uma empresa fictícia, criando o backend em C# com Entity Framework, 
-                        aplicando princípios de Clean Code, arquitetura limpa e os fundamentos do SOLID, como responsabilidade única e segregação de interfaces.</p>
-                    <p>No frontend, utilizei React com Material UI, garantindo uma interface responsiva e acessível em diferentes dispositivos. 
-                        O projeto foi construído com atenção especial à componentização, clareza do código e escalabilidade.</p>
-                    <p>Ao final do treinamento, fui encarregado de liderar o desenvolvimento de um sistema real, chamado Hephaestus, 
-                        responsável por organizar a fila de atendimento de veículos na oficina e lavagem da empresa. 
-                        Esse desafio consolidou meu aprendizado e aprofundou minha experiência com boas práticas de desenvolvimento backend em um ambiente real.</p>
-                </>}>
-            </HomeBlockComponent>
-            <></>
+                data='/2024  ...  Present'
+                local='Agricola Werhmann'
+                subtitle='Desvolvedor Full Stack JR'
+                iconTitle={ceniximg}
+                textAbout={<><p>Desenvolvi o sistema Hephaestus, projetado para gerenciar a fila de atendimento de veículos na oficina e lavagem da empresa. Utilizei C# com .NET, 
+                                    Entity Framework e adotei os princípios da Clean Architecture e SOLID, garantindo um código limpo, escalável e de fácil manutenção.
+                                    Implementei regras de negócio importantes, como a validação que impede a inserção de veículos já presentes na fila com status "pendente" ou "em andamento", 
+                                    além da integração com uma API externa que fornece os dados dos veículos da empresa.
+                                    Esse projeto real me proporcionou experiência prática em desenvolvimento backend, consolidando meus conhecimentos em arquitetura de software, 
+                                    boas práticas de programação e integração de sistemas.</p></>}
+                >
+
+            </HomeExperiencesBlockComponent><></>
         </HomeTableGridComponent>
     </Box>
 
@@ -256,7 +261,7 @@ const Home = () =>{
                         <HomeCardSkillTagComponent title={'Entity Framework'} />
                     </HomeCardComponent>    
                     <HomeCardComponent iconPrimary='mdi:code-block-html' iconBg={true} title='Frontend' >
-                        <HomeCardSkillTagComponent title={'JavaScript'} />
+                        <HomeCardSkillTagComponent title={'JavaScript'}/>
                         <HomeCardSkillTagComponent title={'React'} />
                         <HomeCardSkillTagComponent title={'HTML'} />
                         <HomeCardSkillTagComponent title={'CSS'} />
@@ -269,11 +274,11 @@ const Home = () =>{
                         <HomeCardSkillTagComponent title={'Selenium'} /> 
                     </HomeCardComponent>    
                     <HomeCardComponent iconPrimary='iconoir:brain-research' iconBg={true} title='Geral'>
-                        <HomeCardSkillTagComponent title={'Arquitetura limpa'} />
-                        <HomeCardSkillTagComponent title={'Código limpo'} />
-                        <HomeCardSkillTagComponent title={'Github'} />
-                        <HomeCardSkillTagComponent title={'Web Scraping'} />
-                        <HomeCardSkillTagComponent title={'Automação'} /> 
+                        <HomeCardSkillTagComponent title={'Arquitetura limpa'}/>
+                        <HomeCardSkillTagComponent title={'Código limpo'}/>
+                        <HomeCardSkillTagComponent title={'Github'}/>
+                        <HomeCardSkillTagComponent title={'Web Scraping'}/>
+                        <HomeCardSkillTagComponent title={'Automação'}/> 
                     </HomeCardComponent>    
             </HomeTableGridComponent>
             <Stack direction={'column'} spacing={-4} maxWidth={'90%'}>
@@ -303,21 +308,33 @@ const Home = () =>{
             </HomeIntroSectionComponent>
 
             <HomeTableGridComponent cardOrblock={'block'} >
-                <HomeBlockComponent 
-                    title='Backend Hephaestus'
+                <HomeProjectsBlockComponent 
+                    title={'TESTE'} 
+                    headerImage={hephaestusImage}
+                    data='/2024  ...  Present'
+                    local='Agricola Werhmann'
+                    subtitle='Desvolvedor Full Stack JR'
                     iconTitle={ceniximg}
-                    bgimage={hephaestusimage}
-                    explanation={
-                        <p>Plataforma completa de e-commerce com painel administrativo, sistema de pagamentos e gestão de estoque. 
-                            Desenvolvida com foco em performance e experiência do usuário.</p>}>
-                </HomeBlockComponent>
-                <HomeBlockComponent 
-                    title='texto'
-                    iconTitle={ceniximg}
-                    explanation={
-                        <p>Aplicativo de gerenciamento de tarefas com recurso</p>}>
-                </HomeBlockComponent>
+                    textAbout={
+                        <><p>Desenvolvi o sistema Hephaestus, 
+                        projetado para gerenciar a fila de atendimento de 
+                        veículos na oficina e lavagem da empresa. 
+                        Utilizei C# com .NET, Entity Framework e adotei os 
+                        princípios da Clean Architecture e SOLID, garantindo um 
+                        código limpo, escalável e de fácil manutenção. 
+                        Implementei regras de negócio importantes, 
+                        como a validação que impede a inserção de veículos já 
+                        presentes na fila com status "pendente" ou "em andamento", 
+                        além da integração com uma API externa que fornece os dados 
+                        dos veículos da empresa. Esse projeto real me proporcionou 
+                        experiência prática em desenvolvimento backend, consolidando 
+                        meus conhecimentos em arquitetura de software, boas práticas 
+                        de programação e integração de sistemas.
+                        </p></>}
+                    >
 
+                </HomeProjectsBlockComponent>
+                <></>
 
             </HomeTableGridComponent>         
         </Stack>
@@ -345,7 +362,7 @@ const Home = () =>{
     </Box>
 
     </>
-);
+)
 }
 
 export default Home;
