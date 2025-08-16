@@ -1,4 +1,4 @@
-import { alpha, Avatar, Box, Stack, Typography } from "@mui/material";
+import { alpha, Avatar, Box, Button, Stack, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 
 import usePrimaryColors from "../../theme/colors";
@@ -6,6 +6,7 @@ import type { iHomeProjectsBlockConponentProps } from "../types/i-projects-block
 
 const HomeProjectsBlockComponent = ({ iconTitle, title, subtitle, iconA='', iconB='', textAbout, headerImage}:iHomeProjectsBlockConponentProps) => {
     const primaryColors = usePrimaryColors();
+
     return (
 
         <>
@@ -64,6 +65,19 @@ const HomeProjectsBlockComponent = ({ iconTitle, title, subtitle, iconA='', icon
                         <Typography variant='h5' color='text.secondary' alignItems={'center'} textAlign={'justify'} >
                             {textAbout}
                         </Typography>
+                    <Stack direction={'row'} spacing={3} px={3} pb={2}>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            startIcon={<Icon icon={'majesticons:open-line'}></Icon>}
+                            onClick={()=> {}}
+                        >Ver projeto</Button>
+                        <Button
+                            variant="contained" 
+                            color="inherit"   
+                            startIcon={<Icon icon={'line-md:github'}></Icon>}
+                        >Ver código</Button>
+                    </Stack>
                     </Stack>
                 </Stack>
             </Box>
