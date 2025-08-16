@@ -4,8 +4,11 @@ import { Icon } from "@iconify/react";
 import usePrimaryColors from "../../theme/colors";
 import type { iHomeProjectsBlockConponentProps } from "../types/i-projects-block";
 
-const HomeProjectsBlockComponent = ({ iconTitle, title, subtitle, iconA='', iconB='', textAbout, headerImage}:iHomeProjectsBlockConponentProps) => {
+const HomeProjectsBlockComponent = ({ iconTitle, title, subtitle, iconA='', iconB='', textAbout, headerImage, hasLink=false, linkProj, linkGitHub}:iHomeProjectsBlockConponentProps) => {
     const primaryColors = usePrimaryColors();
+    const handleClick = () => {
+        window.open('/old/portfolio/index.html', '_blank')
+}
 
     return (
 
@@ -15,6 +18,7 @@ const HomeProjectsBlockComponent = ({ iconTitle, title, subtitle, iconA='', icon
                 display={'flex'}
                 flexDirection={'column'}
                 justifyContent={'space-between'}
+                maxWidth={"100%"}
                 sx={{                         
                         borderRadius:'8px',
                         bgcolor:alpha('rgb(224, 224, 224)',0.3),
@@ -33,6 +37,10 @@ const HomeProjectsBlockComponent = ({ iconTitle, title, subtitle, iconA='', icon
                         backgroundRepeat: 'no-repeat',
                         borderTopLeftRadius:'8px',
                         borderTopRightRadius:'8px',
+                        overflow: 'hidden',
+                        position: 'relative',
+                       
+
 
                 }}>
                 <Stack width={'10px'}></Stack>
@@ -65,19 +73,28 @@ const HomeProjectsBlockComponent = ({ iconTitle, title, subtitle, iconA='', icon
                         <Typography variant='h5' color='text.secondary' alignItems={'center'} textAlign={'justify'} >
                             {textAbout}
                         </Typography>
-                    <Stack direction={'row'} spacing={3} px={3} pb={2}>
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            startIcon={<Icon icon={'majesticons:open-line'}></Icon>}
-                            onClick={()=> {}}
-                        >Ver projeto</Button>
-                        <Button
-                            variant="contained" 
-                            color="inherit"   
-                            startIcon={<Icon icon={'line-md:github'}></Icon>}
-                        >Ver código</Button>
-                    </Stack>
+                        { hasLink ? (
+                        <Stack direction={'row'} spacing={3} px={3} pb={2}>
+                            { linkProj &&(
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                startIcon={<Icon icon={'majesticons:open-line'}></Icon>}
+                                onClick={handleClick}
+                            >Ver projeto</Button>)}
+                            {linkGitHub && (
+                            <Button
+                                variant="contained" 
+                                color="inherit"   
+                                startIcon={<Icon icon={'line-md:github'}></Icon>}
+                            >Ver código</Button>)}
+                        </Stack> 
+                        ) : 
+                        <Stack px={4} pb={2}>
+                        <Typography variant='h6' color='text.secondary' alignItems={'center'} textAlign={'justify'}  fontStyle={'italic'}>
+                            projeto particular link indisponível
+                        </Typography>
+                        </Stack>}
                     </Stack>
                 </Stack>
             </Box>

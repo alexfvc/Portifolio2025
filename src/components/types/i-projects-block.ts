@@ -8,4 +8,7 @@ export interface iHomeProjectsBlockConponentProps{
     iconA?:string;
     iconB?:string;
     textAbout?: JSX.Element;
+    hasLink?: boolean;
+    linkProj?:string;
+    linkGitHub?:string;
 }

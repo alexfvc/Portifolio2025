@@ -11,6 +11,7 @@ import ceniximg from '../../assets/images/cenix.png';
 import HomeExperiencesBlockComponent from '../../components/experienceBlock';
 import HomeProjectsBlockComponent from '../../components/projectsBlock';
 import hephaestusImage from '../../assets/images/Hephaestus.png'
+import autoDedImage from '../../assets/images/Auto-Ded2.png'
 
 
 
@@ -319,8 +320,8 @@ const Home = () =>{
                         <><p>Desenvolvi o sistema Hephaestus, 
                         projetado para gerenciar a fila de atendimento de 
                         veículos na oficina e lavagem da empresa. 
-                        Utilizei C# com .NET, Entity Framework e adotei os 
-                        princípios da Clean Architecture e SOLID, garantindo um 
+                        Utilizei <b>C#</b> com <b>.NET</b>, <b>Entity Framework</b> e adotei os 
+                        princípios da <b>Clean Architecture</b> e <b>SOLID</b>, garantindo um 
                         código limpo, escalável e de fácil manutenção. 
                         Implementei regras de negócio importantes, 
                         como a validação que impede a inserção de veículos já 
@@ -334,7 +335,27 @@ const Home = () =>{
                     >
 
                 </HomeProjectsBlockComponent>
-                <></>
+                <HomeProjectsBlockComponent
+                    title='Auto lançamento'
+                    subtitle=''
+                    headerImage={autoDedImage}
+                    iconA='devicon-plain:python'
+                    iconB='simple-icons:selenium'
+                    textAbout={<><p>O projeto consiste em uma automação para o lançamento de aulas no Sistema de Diário Escolar do Estado de Minas Gerais,
+                        utilizando a linguagem Python e bibliotecas como <b>pandas </b> 
+                        (para organização dos dados) e <b>selenium</b> (para automação de tarefas).
+                        O funcionamento é simples: o script consulta um arquivo Excel que contém informações como data da aula, 
+                        turma e descrição da aula. A partir desses dados, as aulas são automaticamente lançadas para as respectivas turmas no sistema.
+                        Essa automação proporciona uma economia significativa de tempo, especialmente porque, em turmas de uma mesma série, 
+                        as aulas costumam se repetir — variando principalmente apenas a data em cada turma. Dessa maneira, 
+                        é possível evitar o retrabalho manual e agilizar substancialmente o processo de registro das aulas.
+                        </p></>}
+                    hasLink={true}
+                    linkGitHub='https://github.com/alexfvc/lancamento-ded-'
+                    >
+                </HomeProjectsBlockComponent>
+
+
 
             </HomeTableGridComponent>         
         </Stack>
