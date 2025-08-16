@@ -15,10 +15,11 @@ import hephaestusImage from '../../assets/images/Hephaestus.png'
 
 
 
-
 const Home = () =>{
     const primaryColors = usePrimaryColors();
     const theme = useTheme();
+
+
     return(
     <>
     <Box bgcolor={theme.palette.action.hover}>
@@ -85,7 +86,6 @@ const Home = () =>{
             variant='contained' 
             startIcon={<Icon icon="material-symbols:download"/> }
             color='primary'
-            
             > 
             Baixar CV
         </Button>  
