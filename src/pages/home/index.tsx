@@ -12,7 +12,7 @@ import HomeExperiencesBlockComponent from '../../components/experienceBlock';
 import HomeProjectsBlockComponent from '../../components/projectsBlock';
 import hephaestusImage from '../../assets/images/Hephaestus.png'
 import autoDedImage from '../../assets/images/Auto-Ded2.png'
-
+import HomeComingSoonPage from '../../components/comingSoonPage'
 
 
 
@@ -154,6 +154,7 @@ const Home = () =>{
             <Button variant='text' color='primary'><Icon icon="line-md:email" width={32} height={32} color={'white'}/></Button>
         </Stack>
     </Stack>
+
     {/* Degree */}
     <Box 
         height={100}
@@ -381,6 +382,10 @@ const Home = () =>{
     <Stack p={5} bgcolor={'rgb(250,2,2)'}>
     </Stack>
     </Box>
+
+    {/* RODA PÉ EM CONSTRUÇÂO*/}
+    <HomeComingSoonPage ativo={true}/>
+
 
     </>
 )

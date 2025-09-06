@@ -4,11 +4,14 @@ import { Icon } from "@iconify/react";
 import usePrimaryColors from "../../theme/colors";
 import type { iHomeProjectsBlockConponentProps } from "../types/i-projects-block";
 
-const HomeProjectsBlockComponent = ({ iconTitle, title, subtitle, iconA='', iconB='', textAbout, headerImage, hasLink=false, linkProj, linkGitHub}:iHomeProjectsBlockConponentProps) => {
-    const primaryColors = usePrimaryColors();
-    const handleClick = () => {
-        window.open('/old/portfolio/index.html', '_blank')
-}
+const HomeProjectsBlockComponent = ({ 
+    iconTitle, title, subtitle, iconA='', iconB='', 
+    textAbout, headerImage, hasLink=false, 
+    linkProj, linkGitHub} : iHomeProjectsBlockConponentProps) => {
+        const primaryColors = usePrimaryColors();
+        const handleClick = () => {
+            window.open('/old/portfolio/index.html', '_blank')
+        }
 
     return (
 
