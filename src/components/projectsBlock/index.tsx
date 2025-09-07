@@ -9,9 +9,7 @@ const HomeProjectsBlockComponent = ({
     textAbout, headerImage, hasLink=false, 
     linkProj, linkGitHub} : iHomeProjectsBlockConponentProps) => {
         const primaryColors = usePrimaryColors();
-        const handleClick = () => {
-            window.open('/old/portfolio/index.html', '_blank')
-        }
+
 
     return (
 
@@ -83,19 +81,20 @@ const HomeProjectsBlockComponent = ({
                                 variant="contained"
                                 color="primary"
                                 startIcon={<Icon icon={'majesticons:open-line'}></Icon>}
-                                onClick={handleClick}
+                                onClick={() => window.open(linkProj, "_blank")}
                             >Ver projeto</Button>)}
                             {linkGitHub && (
                             <Button
                                 variant="contained" 
                                 color="inherit"   
                                 startIcon={<Icon icon={'line-md:github'}></Icon>}
+                                onClick={() => window.open(linkGitHub, "_blank")}
                             >Ver código</Button>)}
                         </Stack> 
                         ) : 
                         <Stack px={4} pb={2}>
                         <Typography variant='h6' color='text.secondary' alignItems={'center'} textAlign={'justify'}  fontStyle={'italic'}>
-                            projeto particular link indisponível
+                            Projeto particular link indisponível
                         </Typography>
                         </Stack>}
                     </Stack>

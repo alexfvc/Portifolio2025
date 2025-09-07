@@ -1,9 +1,10 @@
 import { Stack } from "@mui/material";
-import type {iHomeComingSoonPageProps} from "../types/I-coming-soon-page";
+import type {iHomeComingSoonPageProps} from "../types/i-coming-soon-page";
 
 
 const HomeComingSoonPage = ({ativo}:iHomeComingSoonPageProps)=>{
-return(<>
+return(
+    <>
     {ativo && (
         <Stack
             width="100%"

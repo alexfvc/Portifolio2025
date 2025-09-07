@@ -10,10 +10,10 @@ import HomeTableGridComponent from '../../components/table-grid';
 import ceniximg from '../../assets/images/cenix.png';
 import HomeExperiencesBlockComponent from '../../components/experienceBlock';
 import HomeProjectsBlockComponent from '../../components/projectsBlock';
-import hephaestusImage from '../../assets/images/Hephaestus.png'
-import autoDedImage from '../../assets/images/Auto-Ded2.png'
-import HomeComingSoonPage from '../../components/comingSoonPage'
-
+import hephaestusImage from '../../assets/images/Hephaestus.png';
+import autoDedImage from '../../assets/images/Auto-Ded2.png';
+import HomeComingSoonPage from '../../components/comingSoonPage';
+import Links from '../../config/links.jsx';
 
 
 const Home = () =>{
@@ -24,6 +24,7 @@ const Home = () =>{
     return(
     <>
     <Box bgcolor={theme.palette.action.hover}>
+
     {/* header */}
     <Stack 
         direction={{sm: 'column',md:'row'}}
@@ -87,6 +88,7 @@ const Home = () =>{
             variant='contained' 
             startIcon={<Icon icon="material-symbols:download"/> }
             color='primary'
+            onClick={() => window.open(Links.curriculoVitaePDF, "_blank")}
             > 
             Baixar CV
         </Button>  
@@ -116,7 +118,7 @@ const Home = () =>{
         </Box>        
         <Typography
             variant='h1' fontSize={{xs:'3rem',sm:'3rem',md:'4rem',lg:'5rem'}} fontWeight={'bold'} color='white' 
-                >Alex Costa</Typography>        
+                >Alex Furtado Vilela</Typography>        
         <Button variant='contained'  color='inherit' sx={{borderRadius: '50px'}} >                
             <Typography
                 textAlign={'center'} py={1} 
@@ -144,14 +146,47 @@ const Home = () =>{
                 startIcon={<Icon icon="material-symbols:download"/> }
                 color='primary' 
                 sx={{px:4, py:2, borderRadius: '8px',fontWeight:550}}
+                onClick={() => window.open(Links.curriculoVitaePDF, "_blank")}
+
                 > 
                 Baixar CV
             </Button> 
         </Stack>
         <Stack direction={'row'} alignContent={'center'} spacing={3} pb={3}>
-            <Button variant='text' color='primary'><Icon icon="line-md:linkedin" width={32} height={32} color={'white'}/></Button>
-            <Button variant='text' color='primary'><Icon icon="line-md:github" width={32} height={32} color={'white'}/></Button>
-            <Button variant='text' color='primary'><Icon icon="line-md:email" width={32} height={32} color={'white'}/></Button>
+            <Button 
+                variant='text' 
+                color='primary'
+                onClick={() => window.open(Links.linkedin, "_blank")}
+                >   
+                <Icon 
+                    icon="line-md:linkedin" 
+                    width={32} height={32} 
+                    color={'white'}/>
+            </Button>
+            <Button 
+                variant='text' 
+                color='primary'
+                onClick={() => window.open(Links.github, "_blank")}
+                >   
+                <Icon 
+                    icon="line-md:github" 
+                    width={32} height={32} 
+                    color={'white'}/>
+            </Button>
+            <Button 
+            variant="text" 
+            color="primary"
+            onClick={() => window.open(
+                `mailto:${Links.emailAlexfvc}?subject=Contato%20via%20Portfólio&body=Olá%20Alex,%0D%0A%0D%0AEstou%20entrando%20em%20contato%20após%20ver%20seu%20portfólio.`)}
+            >   
+            <Icon 
+                icon="line-md:email" 
+                width={32} 
+                height={32} 
+                color="white"
+            />
+            </Button>
+
         </Stack>
     </Stack>
 
@@ -336,6 +371,7 @@ const Home = () =>{
                     >
 
                 </HomeProjectsBlockComponent>
+
                 <HomeProjectsBlockComponent
                     title='Auto lançamento'
                     subtitle=''
