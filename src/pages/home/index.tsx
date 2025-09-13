@@ -409,7 +409,7 @@ const Home = () =>{
                     iconA='famicons:logo-javascript' 
                     iconB='catppuccin:javascript-react' 
                     hasLink={true}
-                    linkGitHub='https://github.com/alexfvc/'
+                    linkGitHub='https://github.com/alexfvc/Portifolio2025/blob/dev/src/pages/calendarioDocente/index.tsx'
                     linkProj='/Portifolio2025/calendario-docente'
                     >
 
