@@ -9,8 +9,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Home />}/>
-      <Route path='*' element={<Navigate to="/" replace />} />
-      <Route path='/Portifolio2025/calendario-docente' element={<CalendarioDocente/>}/>
+      <Route path='*' element={<Navigate to="/" replace />} />      <Route path='/Portifolio2025/calendario-docente' element={<CalendarioDocente/>}/>
     </Routes>
   );
 }
