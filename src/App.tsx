@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import './App.css'
 import Home from './pages/home'
 import CalendarioDocente from './pages/calendarioDocente'
@@ -7,12 +7,11 @@ function App() {
 
 
   return (
-    <BrowserRouter basename="/Portifolio2025">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/calendario-docente" element={<CalendarioDocente />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home />}/>
+      <Route path='*' element={<Navigate to="/" replace />} />
+      <Route path='/Portifolio2025/calendario-docente' element={<CalendarioDocente/>}/>
+    </Routes>
   );
 }
 
