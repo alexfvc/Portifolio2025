@@ -36,7 +36,7 @@ const HomeExperiencesBlockComponent = ({title, data, iconTitle, local, subtitle,
                         </Stack>
                                                              
                         <Stack direction={'column'} justifyContent={'flex-start'} alignItems={{sm:'flex-start',md:'flex-end'}} spacing={2}>
-                            <Stack direction={'row'} alignItems={{sm:'flex-start',md:'flex-end'}}spacing={1} >
+                            <Stack direction={'row'} alignItems={{sm:'flex-start',md:'flex-end'}} spacing={1} >
                                 <Icon  icon={'stash:data-date-light'} fontSize={'35px'} color={alpha('rgba(100,100,100)',1)}/>
                                 <Typography variant='h5' color='text.secondary' alignItems={'center'} >
                                     {data}

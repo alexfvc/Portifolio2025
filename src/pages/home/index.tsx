@@ -1,19 +1,25 @@
+import { alpha, useTheme } from '@mui/system';
+import usePrimaryColors from '../../theme/colors';
+
 import { Button, Stack, Typography, Box, Avatar } from '@mui/material';
 import { Icon } from "@iconify/react";
-import profile from '../../assets/images/Profile.jpg'
-import usePrimaryColors from '../../theme/colors';
-import { alpha, useTheme } from '@mui/system';
+
 import HomeIntroSectionComponent from '../../components/intro-Section';
 import HomeCardComponent from '../../components/card';
 import HomeCardSkillTagComponent from '../../components/card/skillTag';
 import HomeTableGridComponent from '../../components/table-grid';
-import ceniximg from '../../assets/images/cenix.png';
 import HomeExperiencesBlockComponent from '../../components/experienceBlock';
 import HomeProjectsBlockComponent from '../../components/projectsBlock';
+
+import profile from '../../assets/images/Profile.jpg'
+import ceniximg from '../../assets/images/cenix.png';
 import hephaestusImage from '../../assets/images/Hephaestus.png';
 import autoDedImage from '../../assets/images/Auto-Ded2.png';
+import CalendarioDocenteImage from '../../assets/images/Calendario-docente.png'
+
 import HomeComingSoonPage from '../../components/comingSoonPage';
-import Links from '../../config/links.jsx';
+
+import Links from '../../config/links';
 
 
 const Home = () =>{
@@ -392,6 +398,24 @@ const Home = () =>{
                     >
                 </HomeProjectsBlockComponent>
 
+                <HomeProjectsBlockComponent 
+                    title='Calendário Docente' 
+                    headerImage= {CalendarioDocenteImage}
+                    textAbout={<><p>O sistema desenvolvido em React tem como objetivo organizar e disponibilizar de forma prática as datas das aulas de um professor, 
+                        oferecendo uma interface intuitiva e responsiva para os usuários. A aplicação consome dados previamente cadastrados em uma base 
+                        (como um banco de dados ou planilha integrada) e exibe o cronograma de aulas em uma visualização clara, 
+                        permitindo ao professor e aos alunos acessarem rapidamente as informações atualizadas. Além disso, 
+                        o uso do React possibilita uma navegação fluida e componentes reutilizáveis, tornando o sistema escalável e de fácil manutenção.</p></>} 
+                    iconA='famicons:logo-javascript' 
+                    iconB='catppuccin:javascript-react' 
+                    hasLink={true}
+                    linkGitHub='https://github.com/alexfvc/'
+                    linkProj='/Portifolio2025/calendario-docente'
+                    >
+
+
+                </HomeProjectsBlockComponent>
+
 
 
             </HomeTableGridComponent>         
@@ -421,8 +445,6 @@ const Home = () =>{
 
     {/* RODA PÉ EM CONSTRUÇÂO*/}
     <HomeComingSoonPage ativo={true}/>
-
-
     </>
 )
 }
