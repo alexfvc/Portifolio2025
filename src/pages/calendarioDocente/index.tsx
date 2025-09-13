@@ -12,7 +12,7 @@ const CalendarioDocente = () => {
 
     return(
     <>        
-    <Stack direction={'column'} width={'100%'} p={0} m={0} justifyContent={"center"} alignItems={'center'} spacing={1}>
+    <Stack direction={'column'} width={'100%'} p={0} m={0} justifyContent={"center"} alignItems={'center'} spacing={3}>
         <Stack direction={'column'} width={'100%'} spacing={1} bgcolor={alpha(primaryColors.primary.main,1)}  justifyContent={"center"} alignItems={'center'}>
             <Stack direction={'row'} width={'100%'} justifyContent={"center"} alignItems={'center'}>
                 <Icon icon={'arcticons:studysmarter'} fontSize={'55px'} color={'white'} />

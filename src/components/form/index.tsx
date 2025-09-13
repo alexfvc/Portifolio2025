@@ -1,4 +1,4 @@
-import { alpha, Stack, Typography, useTheme } from "@mui/material";
+import { alpha, Chip, Stack, Typography, useTheme } from "@mui/material";
 import { Icon } from "@iconify/react";
 
 
@@ -12,7 +12,7 @@ const CalendarioDocenteFormComponent = () => {
             display={'flex'} 
             justifyContent={'center'} 
             alignItems={'flex-start'} 
-            spacing={1}         
+            spacing={5}         
             sx={{
                     p:3,
                     borderRadius: '5px',
@@ -35,10 +35,14 @@ const CalendarioDocenteFormComponent = () => {
                     {'Filtro'}
                 </Typography>              
             </Stack>
-            <Stack direction={'row'} spacing={1}>
-
+            <Stack direction={'row'} spacing={1}> 
+                <Chip label="Segunda-feira" variant="outlined" />
+                <Chip label="Terça-feira" variant="outlined" />
+                <Chip label="Quarta-feira" variant="outlined" />
+                <Chip label="Quinta-feira" variant="outlined" />
+                <Chip label="Sexta-feira" variant="outlined" />
+                <Chip label="Sábado" variant="outlined" />
             </Stack>
-
         </Stack>
         
         
