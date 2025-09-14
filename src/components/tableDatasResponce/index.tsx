@@ -6,7 +6,7 @@ const CalendarioDocenteTableDataResponceComponent = ({ selectedDays, selectedBim
     const [bimestersData, setBimestersData] = useState<Record<string,string[]>>({});
 
     useEffect(() => {
-        Papa.parse('/assets/data/dias letivos 2025.csv?url', {
+        Papa.parse('/assets/data/dias_letivos_2025.csv', {
         download: true,
         header: true,
         skipEmptyLines: true,
