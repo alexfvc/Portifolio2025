@@ -7,20 +7,19 @@ import CalendarioDocenteStatusAula from "../../components/statusAulas";
 import CalendarioDocenteFormComponent from "../../components/form";
 import HomeComingSoonPage from "../../components/comingSoonPage";
 import CalendarioDocenteTableDataResponceComponent from "../../components/tableDatasResponce";
-import { useState } from "react";
+type Filters = { days: string[]; bimesters: string[] };
 
 const CalendarioDocente = ({
-        filters,
-        setFilters,
+    filters,
+    setFilters,
         }: {
-        filters: { days: string[]; bimesters: string[] };
-        setFilters: React.Dispatch<React.SetStateAction<{ days: string[]; bimesters: string[] }>>;
-    }) => {
-    const primaryColors = usePrimaryColors();
+        filters: Filters;
+        setFilters: React.Dispatch<React.SetStateAction<Filters>>;
+        }) => {
+            const primaryColors = usePrimaryColors();
 
-    const [filters, setFilters] = useState({ days: [], bimesters: [] });
-    console.log("Dias selecionados:", updatedDays);
-    console.log("Bimestres selecionados:", filters.bimesters);
+         console.log("Dias selecionados:", filters.days);
+            console.log("Bimestres selecionados:", filters.bimesters);
 
     return(
     <>        
