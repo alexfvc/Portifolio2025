@@ -7,22 +7,21 @@ const CalendarioDocenteStatusAula = ({iconPrimary, iconBg, title,subtitle}:IStat
     return(
         <>
         <Stack    
-            direction={'column'}      
-            display={'flex'} 
-            justifyContent={'center'} 
-            alignItems={'center'} 
-            spacing={1}               
+            flex={1}               
+            minWidth="250px"       
+            maxWidth="100%"       
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            spacing={2}
+            p={3}
+            borderRadius="5px"
+            bgcolor={alpha('rgb(224, 224, 224)', 0.3)}
             sx={{
-                    p:3,
-                    borderRadius: '5px',
-                    bgcolor: alpha('rgb(224, 224, 224)', 0.3),
-                    transition: '0.6s ease-in',
-                    minHeight: '100px',
-                    minWidth: '160px',
-                    
-                    '&:hover': {
-                    boxShadow: 15,
-                    bgcolor: alpha('rgb(224, 224, 224)', 0.1),
+                transition: '0.6s ease-in',
+                '&:hover': {
+                boxShadow: 15,
+                bgcolor: alpha('rgb(224, 224, 224)', 0.1),
                 },
             }}
             boxShadow={2}

@@ -6,29 +6,79 @@ import { Icon } from "@iconify/react";
 import CalendarioDocenteStatusAula from "../../components/statusAulas";
 import CalendarioDocenteFormComponent from "../../components/form";
 import HomeComingSoonPage from "../../components/comingSoonPage";
+import CalendarioDocenteTableDataResponceComponent from "../../components/tableDatasResponce";
+import { useState } from "react";
 
-const CalendarioDocente = () => {
+const CalendarioDocente = ({
+        filters,
+        setFilters,
+        }: {
+        filters: { days: string[]; bimesters: string[] };
+        setFilters: React.Dispatch<React.SetStateAction<{ days: string[]; bimesters: string[] }>>;
+    }) => {
     const primaryColors = usePrimaryColors();
+
+    const [filters, setFilters] = useState({ days: [], bimesters: [] });
+    console.log("Dias selecionados:", updatedDays);
+    console.log("Bimestres selecionados:", filters.bimesters);
 
     return(
     <>        
-    <Stack direction={'column'} width={'100%'} p={0} m={0} justifyContent={"center"} alignItems={'center'} spacing={3}>
-        <Stack direction={'column'} width={'100%'} spacing={1} bgcolor={alpha(primaryColors.primary.main,1)}  justifyContent={"center"} alignItems={'center'}>
-            <Stack direction={'row'} width={'100%'} justifyContent={"center"} alignItems={'center'}>
-                <Icon icon={'arcticons:studysmarter'} fontSize={'55px'} color={'white'} />
-                <Typography variant='h3' color='white'>Sistema de Cronograma</Typography>
+    <Stack direction={'column'}  p={0} m={0} mb={5} mt={-1} justifyContent={"center"} alignItems={'center'} spacing={2}>
+        <Stack 
+            direction={'column'} 
+            width={'100%'} 
+            spacing={1} 
+            bgcolor={alpha(primaryColors.primary.main,1)}  
+            justifyContent={"center"} 
+            alignItems={'center'}
+            px={2}
+            mx={2}
+            >
+
+            <Stack>
+                <Stack direction={'row'} width={'100%'} justifyContent={"center"} alignItems={'center'} spacing={1}>
+                    <Icon icon={'arcticons:studysmarter'} fontSize={'55px'} color={'white'} />
+                    <Typography variant='h3' color='white'>Calendário Docente</Typography>
+                </Stack>    
+                <Typography variant='h6' color='white'>Organize e gerencie suas aulas de forma prática e eficiente</Typography>
             </Stack>
-    
-            <Typography variant='h6' color='white'>Organize e gerencie suas aulas de forma prática e eficiente</Typography>
+
         </Stack>
-        <Stack direction={{ xs: 'column', md:'row',lg:'row' }} width={'100%'} bgcolor={''} justifyContent={'space-around'}  spacing={3}>
-            <CalendarioDocenteStatusAula iconPrimary={'line-md:arrow-align-left'} title="Aulas Lecionadas" iconBg={true} subtitle="18"/>
-            <CalendarioDocenteStatusAula iconPrimary="fluent-mdl2:renewal-future" title="Aulas Futuras" iconBg={true} subtitle="02"/>
+        <Stack
+            direction={'column'}
+            width="100%"
+            justifyContent="center" 
+            alignItems="center" 
+            spacing={2}
+            px={2}
+        >
+        <Stack
+            direction={{ xs: 'column', md:'row' }}
+            width="100%"
+            justifyContent="center" 
+            alignItems="stretch" 
+            spacing={2}
+            px={2}
+        >
+            <CalendarioDocenteStatusAula
+                iconPrimary={'line-md:arrow-align-left'}
+                title="Aulas Lecionadas"
+                iconBg={true}
+                subtitle="18"
+            />
+            <CalendarioDocenteStatusAula
+                iconPrimary="fluent-mdl2:renewal-future"
+                title="Aulas Futuras"
+                iconBg={true}
+                subtitle="02"
+            />
+            <CalendarioDocenteFormComponent filters={filters} setFilters={setFilters} />
         </Stack>
 
-        <CalendarioDocenteFormComponent>
-            
-        </CalendarioDocenteFormComponent>
+        <CalendarioDocenteTableDataResponceComponent selectedDays={filters.days} selectedBimesters={filters.bimesters} />
+
+        </Stack>
     </Stack>
 
     {/* RODA PÉ EM CONSTRUÇÂO*/}
