@@ -1,38 +1,15 @@
-// CalendarioDocenteFormComponent.tsx
-import React from "react";
 import { Stack, Chip, Typography, alpha, useTheme } from "@mui/material";
 import { Icon } from "@iconify/react";
+import useDataList from "./hooks/use-data-list";
 
-interface Props {
-  filters: { days: string[]; bimesters: string[] };
-  setFilters: React.Dispatch<React.SetStateAction<{ days: string[]; bimesters: string[] }>>;
-}
 
-const days = ["Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira"];
-const bimesters = ["1° Bimestre","2° Bimestre","3° Bimestre","4° Bimestre"];
 
-const CalendarioDocenteFormComponent = ({ filters, setFilters }: Props) => {
+const CalendarioDocenteFormComponent = () => {
   const theme = useTheme();
 
-  const toggleDay = (day: string) => {
-    const updated = filters.days.includes(day)
-      ? filters.days.filter(d => d !== day)
-      : [...filters.days, day];
-    setFilters({ ...filters, days: updated });
-  };
-
-  const toggleBimester = (bim: string) => {
-    let updated: string[];
-    if (bim === "Todos") {
-      updated = filters.bimesters.length === 4 ? [] : [...bimesters];
-    } else {
-      updated = filters.bimesters.includes(bim)
-        ? filters.bimesters.filter(b => b !== bim)
-        : [...filters.bimesters, bim];
-    }
-    setFilters({ ...filters, bimesters: updated });
-  };
-
+  const { listAllDatas } = useDataList();
+  
+  
   return (
     <Stack  
         flex={1}               
@@ -55,31 +32,27 @@ const CalendarioDocenteFormComponent = ({ filters, setFilters }: Props) => {
         <Icon icon="line-md:filter" fontSize="2rem" color={theme.palette.primary.main} />
         <Typography variant="h5" fontWeight="bold">Filtro</Typography>
       </Stack>
-
-      <Typography>Selecione os dias da semana trabalhados:</Typography>
+      {listAllDatas}
+      <Typography>Selecione os dias da semana trabalhados: </Typography>
       <Stack direction={{ xs: "column", sm: "row" }} spacing={1}>
-        {days.map(day => (
+
           <Chip
-            key={day}
-            label={day}
-            variant={filters.days.includes(day) ? "filled" : "outlined"}
+            label={"dia"}
+            variant="filled"
             color="primary"
-            onClick={() => toggleDay(day)}
+            onClick={() => console.log("Dia clicado:", dia)}
           />
-        ))}
+
       </Stack>
 
-      <Typography>Selecione o/os Bimestre trabalhados:</Typography>
+      <Typography>Selecione o/os Bimestre trabalhados: </Typography>
       <Stack direction={{ xs: "column", sm: "row" }} spacing={1}>
-        {[...bimesters, "Todos"].map(bim => (
-          <Chip
-            key={bim}
-            label={bim}
-            variant={filters.bimesters.includes(bim) || (bim === "Todos" && filters.bimesters.length===4) ? "filled" : "outlined"}
-            color="primary"
-            onClick={() => toggleBimester(bim)}
-          />
-        ))}
+        <Chip
+          label={'bim'}
+          variant={"filled"}
+          color="primary"
+          onClick={() => console.log("Bimestre clicado")}
+        />
       </Stack>
     </Stack>
   );

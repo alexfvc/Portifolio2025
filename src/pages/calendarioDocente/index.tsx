@@ -8,17 +8,8 @@ import CalendarioDocenteFormComponent from "../../components/form";
 import HomeComingSoonPage from "../../components/comingSoonPage";
 import CalendarioDocenteTableDataResponceComponent from "../../components/tableDatasResponce";
 
-    const CalendarioDocente = ({
-            filters,
-            setFilters,
-            }: {
-            filters: { days: string[]; bimesters: string[] };
-            setFilters: React.Dispatch<
-                React.SetStateAction<{ days: string[]; bimesters: string[] }>
-            >;
-        }) => {
-            console.log("Dias selecionados:", filters.days);
-            console.log("Bimestres selecionados:", filters.bimesters);
+    const CalendarioDocente = () => {
+
 
         const primaryColors = usePrimaryColors();
 
@@ -73,10 +64,10 @@ import CalendarioDocenteTableDataResponceComponent from "../../components/tableD
                 iconBg={true}
                 subtitle="02"
             />
-            <CalendarioDocenteFormComponent filters={filters} setFilters={setFilters} />
+            <CalendarioDocenteFormComponent />
         </Stack>
 
-        <CalendarioDocenteTableDataResponceComponent selectedDays={filters.days} selectedBimesters={filters.bimesters} />
+        <CalendarioDocenteTableDataResponceComponent  />
 
         </Stack>
     </Stack>
