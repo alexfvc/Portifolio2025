@@ -29,20 +29,48 @@ const CalendarioDocenteTableDataResponceComponent = () => {
                 },
             }}
             boxShadow={2}>
-            <TableContainer component={Paper}>
-                <Table aria-label="customized table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>#</TableCell>
+            <Paper sx={{ width: '100%', overflow: 'hidden' }} >
+                <TableContainer component={Paper}>
+                    <Table aria-label="customized table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>#</TableCell>
+                                <TableCell>b1</TableCell>
+                                <TableCell>b2</TableCell>
+                                <TableCell>b3</TableCell>
+                                <TableCell>b4</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell>1#</TableCell>
+                                <TableCell>1b1</TableCell>
+                                <TableCell>1b2</TableCell>
+                                <TableCell>1b3</TableCell>
+                                <TableCell>1b4</TableCell>
+                            </TableRow>  
+
+                            <TableRow>
+                                <TableCell>2#</TableCell>
+                                <TableCell>2b1</TableCell>
+                                <TableCell>2b2</TableCell>
+                                <TableCell>2b3</TableCell>
+                                <TableCell>2b4</TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell>3#</TableCell>
+                                <TableCell>3b1</TableCell>
+                                <TableCell>3b2</TableCell>
+                                <TableCell>3b3</TableCell>
+                                <TableCell>3b4</TableCell>
+                            </TableRow>
+
                             
 
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-
-                    </TableBody>
-                </Table>
-            </TableContainer>
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Paper>
         </Stack>
         </>
     );

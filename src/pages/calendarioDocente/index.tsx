@@ -8,7 +8,9 @@ import CalendarioDocenteFormComponent from "../../components/form";
 import HomeComingSoonPage from "../../components/comingSoonPage";
 import CalendarioDocenteTableDataResponceComponent from "../../components/tableDatasResponce";
 
-    const CalendarioDocente = () => {
+    
+
+const CalendarioDocente = () => {
 
 
         const primaryColors = usePrimaryColors();
@@ -53,7 +55,7 @@ import CalendarioDocenteTableDataResponceComponent from "../../components/tableD
             px={2}
         >
             <CalendarioDocenteStatusAula
-                iconPrimary={'line-md:arrow-align-left'}
+                iconPrimary={'fluent-mdl2:calendar-reply'}
                 title="Aulas Lecionadas"
                 iconBg={true}
                 subtitle="18"
@@ -63,8 +65,17 @@ import CalendarioDocenteTableDataResponceComponent from "../../components/tableD
                 title="Aulas Futuras"
                 iconBg={true}
                 subtitle="02"
+            />            
+            <CalendarioDocenteStatusAula
+                iconPrimary="fluent-mdl2:calendar"
+                title="total de Aulas"
+                iconBg={true}
+                subtitle="20"
             />
-            <CalendarioDocenteFormComponent />
+            <CalendarioDocenteFormComponent
+                onDaysChange={(days) => console.log("Dias selecionados:", days)}
+                onBimestersChange={(bimesters) => console.log("Bimestres selecionados:", bimesters)}
+                />
         </Stack>
 
         <CalendarioDocenteTableDataResponceComponent  />

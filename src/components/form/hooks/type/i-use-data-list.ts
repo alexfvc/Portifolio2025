@@ -1,3 +1,5 @@
-export default interface IUseDataList{
-    listAllDatas: Array<string> | undefined,
+import type { DiaLetivo } from "./i-dialetivo";
+
+export default interface IUseDataList {
+  listAllDatas: DiaLetivo[];
 }

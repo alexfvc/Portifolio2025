@@ -1,28 +1,24 @@
 import type IUseDataList from "./type/i-use-data-list";
 import { useEffect, useState } from "react";
 import Papa from "papaparse";
+import type { DiaLetivo } from "./type/i-dialetivo";
 
+export default function useDataList(): IUseDataList {
+  const [listAllDatas, setListAllDatas] = useState<DiaLetivo[]>([]);
+  const csvPath = `${import.meta.env.BASE_URL}data/dias_letivos_2025.csv`;
 
-export default function useDataList() : IUseDataList{
-    const [listAllDatas, setListAllDatas] = useState<Array<string>>();
-
-    useEffect(() => {
-    Papa.parse("/data/dias_letivos_2025.csv", {
-        
-        download: true,
-        header: true,
-        complete: (result) => {
-        console.log("CSV bruto:", result.data);
-        const flattened = result.data.flat() as string[];
-        console.log("CSV transformado em array de strings:", flattened);
-        setListAllDatas(flattened);
-        },
+  useEffect(() => {
+    Papa.parse<DiaLetivo>(csvPath, {
+      header: true,
+      download: true,
+      complete: (result) => {
+        setListAllDatas(result.data as DiaLetivo[]);
+      },
     });
-    }, []);
+  }, []);
+console.log("listalldatas:",listAllDatas)
 
-    console.log("Estado atualizado:", listAllDatas);
-
-    return {
-        listAllDatas, 
-    };
+  return {
+    listAllDatas,
+  };
 }
