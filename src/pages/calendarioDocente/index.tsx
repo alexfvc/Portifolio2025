@@ -3,7 +3,7 @@ import usePrimaryColors from "../../theme/colors";
 import { alpha, Stack, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 
-// import CalendarioDocenteStatusAula from "../../components/statusAulas";
+import CalendarioDocenteStatusAula from "../../components/statusAulas";
 import CalendarioDocenteFormComponent from "../../components/form";
 import HomeComingSoonPage from "../../components/comingSoonPage";
 import CalendarioDocenteTableDataResponceComponent from "../../components/tableDatasResponce";
@@ -53,7 +53,7 @@ const CalendarioDocente = () => {
         >
         <Stack
             direction={{ xs: 'column', md:'row' }}
-            width="100%"
+            width={{xs:'100%', md:'100%' }}
             justifyContent="center" 
             alignItems="stretch" 
             spacing={2}
@@ -77,19 +77,21 @@ const CalendarioDocente = () => {
                 title="total de Aulas"
                 iconBg={true}
                 subtitle="20"
-            />
-        */}
+            />*/}
+        
 
-            <CalendarioDocenteFormComponent
-                onDaysChange={setSelectedDays}
-                onBimestersChange={setSelectedBimesters}
-                />
         </Stack>
+        <Stack direction={{ xs: 'column', md:'row' }} alignContent={'flex-start'} spacing={2} minWidth={"100%"}>
+        <CalendarioDocenteFormComponent
+            onDaysChange={setSelectedDays}
+            onBimestersChange={setSelectedBimesters}
+            />
 
         <CalendarioDocenteTableDataResponceComponent         
             dados={listAllDatas}
             diasSelecionados={selectedDays}
             bimestresSelecionados={selectedBimesters}/>
+        </Stack>
         </Stack>
     </Stack>
 

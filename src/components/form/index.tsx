@@ -54,9 +54,9 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
   
   return (
     <Stack  
-        flex={1}               
+        flex={0}               
         direction="column"
-        justifyContent="center"
+        justifyContent="start"
         alignItems="center"
         spacing={3}
         p={3}

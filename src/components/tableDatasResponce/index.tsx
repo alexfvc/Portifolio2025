@@ -61,11 +61,12 @@ const CalendarioDocenteTableDataResponceComponent: React.FC<Props> = ({
             <Paper sx={{ width: '100%', overflow: 'hidden' }} >
                 <TableContainer component={Paper}>
                     <Table aria-label="customized table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell><Typography variant='h6' color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">#</Typography></TableCell>
-                                {bimestresSelecionados.map((bim, index) => (
-                                    <TableCell key={index}><Typography variant="h6"  color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">{bim}</Typography></TableCell>
+                        <TableHead >
+                            <TableRow >
+                                <TableCell><Typography variant="h6"  
+                                    sx={{fontSize: {xs: '1.0rem', md: '1.5rem'}}} color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">#</Typography></TableCell>
+                                    {bimestresSelecionados.map((bim, index) => (
+                                    <TableCell key={index}><Typography variant="h6"  sx={{fontSize: {xs: '1.0rem', md: '1.4rem'}}} color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">{bim}</Typography></TableCell>
                                 ))}
                             </TableRow>
                         </TableHead>
@@ -74,13 +75,13 @@ const CalendarioDocenteTableDataResponceComponent: React.FC<Props> = ({
                         {Array.from({ length: maxLinhas }).map((_, rowIndex) => (
                             <TableRow key={rowIndex}>
                             {/* aqui entra o índice (rowIndex + 1) */}
-                            <TableCell><Typography variant="h6" color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">{rowIndex + 1}</Typography></TableCell>
+                            <TableCell ><Typography variant="h6" sx={{fontSize: {xs: '1.0rem', md: '1.4rem'}}} color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">{rowIndex + 1}</Typography></TableCell>
 
                             {bimestresSelecionados.map((bim, colIndex) => {
                                 const datas = datasPorBimestre[bim] || [];
                                 return (
                                 <TableCell key={colIndex}>
-                                    <Typography variant="h6">
+                                    <Typography variant="h6" sx={{fontSize: {xs: '1.0rem', md: '1.4rem'}}}>
                                         {datas[rowIndex] ?? ""}
                                     </Typography>
                                 </TableCell>
