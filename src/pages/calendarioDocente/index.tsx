@@ -3,17 +3,22 @@ import usePrimaryColors from "../../theme/colors";
 import { alpha, Stack, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 
-import CalendarioDocenteStatusAula from "../../components/statusAulas";
+// import CalendarioDocenteStatusAula from "../../components/statusAulas";
 import CalendarioDocenteFormComponent from "../../components/form";
 import HomeComingSoonPage from "../../components/comingSoonPage";
 import CalendarioDocenteTableDataResponceComponent from "../../components/tableDatasResponce";
+import { useState } from "react";
+import useDataList from "../../components/form/hooks/use-data-list";
 
     
 
 const CalendarioDocente = () => {
+    const { listAllDatas } = useDataList(); 
+    const [selectedDays, setSelectedDays] = useState<string[]>([]);
+    const [selectedBimesters, setSelectedBimesters] = useState<string[]>([]);
 
 
-        const primaryColors = usePrimaryColors();
+    const primaryColors = usePrimaryColors();
 
     return(
     <>        
@@ -53,7 +58,8 @@ const CalendarioDocente = () => {
             alignItems="stretch" 
             spacing={2}
             px={2}
-        >
+        >   
+        {/*
             <CalendarioDocenteStatusAula
                 iconPrimary={'fluent-mdl2:calendar-reply'}
                 title="Aulas Lecionadas"
@@ -72,14 +78,18 @@ const CalendarioDocente = () => {
                 iconBg={true}
                 subtitle="20"
             />
+        */}
+
             <CalendarioDocenteFormComponent
-                onDaysChange={(days) => console.log("Dias selecionados:", days)}
-                onBimestersChange={(bimesters) => console.log("Bimestres selecionados:", bimesters)}
+                onDaysChange={setSelectedDays}
+                onBimestersChange={setSelectedBimesters}
                 />
         </Stack>
 
-        <CalendarioDocenteTableDataResponceComponent  />
-
+        <CalendarioDocenteTableDataResponceComponent         
+            dados={listAllDatas}
+            diasSelecionados={selectedDays}
+            bimestresSelecionados={selectedBimesters}/>
         </Stack>
     </Stack>
 

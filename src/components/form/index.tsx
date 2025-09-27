@@ -1,6 +1,7 @@
 import { Stack, Chip, Typography, alpha, useTheme } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
+import {singleBimester, singleDays} from "../../constants/calendarioDocenteConstants"
 
 
 interface Props {
@@ -18,15 +19,6 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
 
   /*const { listAllDatas } = useDataList();*/
   
-  
-  const singleDays = [
-    "segunda-feira","terça-feira",
-    "quarta-feira","quinta-feira",
-    "sexta-feira"];
-  const singleBimester = [
-    "1° bimestre","2° bimestre",
-    "3° bimestre","4° bimestre"];
-
   const [selectedDays, setSelectedDays] = useState<string[]>([]);
   const [selectedBimesters, setSelectedBimesters] = useState<string[]>([]);
 
@@ -66,7 +58,7 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
         direction="column"
         justifyContent="center"
         alignItems="center"
-        spacing={2}
+        spacing={3}
         p={3}
         borderRadius="5px"
         bgcolor={alpha('rgb(224, 224, 224)', 0.3)}
@@ -80,10 +72,11 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
         boxShadow={2}>
       <Stack direction="row" spacing={1} alignItems="center">
         <Icon icon="line-md:filter" fontSize="2rem" color={theme.palette.primary.main} />
-        <Typography variant="h5" fontWeight="bold">Filtro</Typography>
+        <Typography variant='h5' color='text.secondary' textAlign={'center'} fontWeight="fontWeightBold">Filtro</Typography>
       </Stack>
       
-        <Typography>Selecione os dias da semana trabalhados: </Typography>
+      
+        <Typography variant='h5' color='text.secondary' textAlign={'center'} fontWeight="fontWeightBold">Selecione os dias da semana trabalhados: </Typography>
         <Stack direction={{ xs: "column", sm: "row" }} spacing={1}>
           {singleDays.map((item, index) => (
             <Chip
@@ -98,7 +91,7 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
           ))}
         </Stack>
 
-        <Typography>Selecione o/os Bimestre trabalhados: </Typography>
+        <Typography variant='h5' color='text.secondary' textAlign={'center'} fontWeight="fontWeightBold">Selecione o/os Bimestre trabalhados: </Typography>
         <Stack direction={{ xs: "column", sm: "row" }} spacing={1}>
           {singleBimester.map((item, index) => (
             <Chip

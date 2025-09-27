@@ -1,12 +1,41 @@
-import { alpha, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { alpha, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import type { DiaLetivo } from "../form/hooks/type/i-dialetivo";
+import {singleBimester} from "../../constants/calendarioDocenteConstants" 
 
+interface Props {
+    dados: DiaLetivo[];
+    diasSelecionados: string[];
+    bimestresSelecionados: string[];
+}
+const ordemBimestres = singleBimester
 
-const CalendarioDocenteTableDataResponceComponent = () => {
+const CalendarioDocenteTableDataResponceComponent: React.FC<Props> = ({
+  dados,
+  diasSelecionados,
+  bimestresSelecionados,
+}) => {
 
+    // aplica a ordem fixa mas mostra apenas os selecionados
+  const bimestresOrdenados = ordemBimestres.filter((b) =>
+    bimestresSelecionados.includes(b)
+  );
 
+  // monta um objeto { bimestre: [datas...] } filtrado pelos dias selecionados
+  const datasPorBimestre = bimestresOrdenados.reduce((acc, bim) => {
+    acc[bim] = dados
+      .filter(
+        (d) => d.bimestre === bim && diasSelecionados.includes(d["dia letivo"])
+      )
+      .map((d) => d.data);
+    return acc;
+  }, {} as Record<string, string[]>);
 
+  // calcula a maior quantidade de datas
+  const maxLinhas = Math.max(
+    ...bimestresOrdenados.map((bim) => datasPorBimestre[bim]?.length || 0),
+    0
+  );
 
-    
 
     return(
         <>
@@ -34,39 +63,31 @@ const CalendarioDocenteTableDataResponceComponent = () => {
                     <Table aria-label="customized table">
                         <TableHead>
                             <TableRow>
-                                <TableCell>#</TableCell>
-                                <TableCell>b1</TableCell>
-                                <TableCell>b2</TableCell>
-                                <TableCell>b3</TableCell>
-                                <TableCell>b4</TableCell>
+                                <TableCell><Typography variant='h6' color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">#</Typography></TableCell>
+                                {bimestresSelecionados.map((bim, index) => (
+                                    <TableCell key={index}><Typography variant="h6"  color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">{bim}</Typography></TableCell>
+                                ))}
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            <TableRow>
-                                <TableCell>1#</TableCell>
-                                <TableCell>1b1</TableCell>
-                                <TableCell>1b2</TableCell>
-                                <TableCell>1b3</TableCell>
-                                <TableCell>1b4</TableCell>
-                            </TableRow>  
+                        {/* Renderiza linhas de acordo com o maior número de datas */}
+                        {Array.from({ length: maxLinhas }).map((_, rowIndex) => (
+                            <TableRow key={rowIndex}>
+                            {/* aqui entra o índice (rowIndex + 1) */}
+                            <TableCell><Typography variant="h6" color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">{rowIndex + 1}</Typography></TableCell>
 
-                            <TableRow>
-                                <TableCell>2#</TableCell>
-                                <TableCell>2b1</TableCell>
-                                <TableCell>2b2</TableCell>
-                                <TableCell>2b3</TableCell>
-                                <TableCell>2b4</TableCell>
+                            {bimestresSelecionados.map((bim, colIndex) => {
+                                const datas = datasPorBimestre[bim] || [];
+                                return (
+                                <TableCell key={colIndex}>
+                                    <Typography variant="h6">
+                                        {datas[rowIndex] ?? ""}
+                                    </Typography>
+                                </TableCell>
+                                );
+                            })}
                             </TableRow>
-                            <TableRow>
-                                <TableCell>3#</TableCell>
-                                <TableCell>3b1</TableCell>
-                                <TableCell>3b2</TableCell>
-                                <TableCell>3b3</TableCell>
-                                <TableCell>3b4</TableCell>
-                            </TableRow>
-
-                            
-
+                        ))}
                         </TableBody>
                     </Table>
                 </TableContainer>
