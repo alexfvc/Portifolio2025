@@ -31,7 +31,7 @@ const CalendarioDocenteTableDataResponceComponent: React.FC<Props> = ({
   }, {} as Record<string, string[]>);
 
   // calcula a maior quantidade de datas
-  const maxLinhas = Math.max(
+  const maxRows = Math.max(
     ...bimestresOrdenados.map((bim) => datasPorBimestre[bim]?.length || 0),
     0
   );
@@ -63,25 +63,25 @@ const CalendarioDocenteTableDataResponceComponent: React.FC<Props> = ({
                     <Table aria-label="customized table">
                         <TableHead >
                             <TableRow >
-                                <TableCell><Typography variant="h6"  
-                                    sx={{fontSize: {xs: '1.0rem', md: '1.5rem'}}} color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">#</Typography></TableCell>
+                                <TableCell><Typography   
+                                    sx={{fontSize: {xs: '0.8rem', md: '1.4rem'}}} color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">#</Typography></TableCell>
                                     {bimestresSelecionados.map((bim, index) => (
-                                    <TableCell key={index}><Typography variant="h6"  sx={{fontSize: {xs: '1.0rem', md: '1.4rem'}}} color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">{bim}</Typography></TableCell>
+                                    <TableCell key={index}><Typography sx={{fontSize: {xs: '0.8rem', md: '1.0rem'}}} color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">{bim}</Typography></TableCell>
                                 ))}
                             </TableRow>
                         </TableHead>
-                        <TableBody>
+                        <TableBody >
                         {/* Renderiza linhas de acordo com o maior número de datas */}
-                        {Array.from({ length: maxLinhas }).map((_, rowIndex) => (
+                        {Array.from({ length: maxRows }).map((_, rowIndex) => (
                             <TableRow key={rowIndex}>
                             {/* aqui entra o índice (rowIndex + 1) */}
-                            <TableCell ><Typography variant="h6" sx={{fontSize: {xs: '1.0rem', md: '1.4rem'}}} color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">{rowIndex + 1}</Typography></TableCell>
+                            <TableCell ><Typography  sx={{fontSize: {xs: '0.8rem', md: '1.0rem'}}} color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">{rowIndex + 1}</Typography></TableCell>
 
                             {bimestresSelecionados.map((bim, colIndex) => {
                                 const datas = datasPorBimestre[bim] || [];
                                 return (
-                                <TableCell key={colIndex}>
-                                    <Typography variant="h6" sx={{fontSize: {xs: '1.0rem', md: '1.4rem'}}}>
+                                <TableCell key={colIndex} >
+                                    <Typography  sx={{fontSize: {xs: '0.8rem', md: '1.0rem'}}}>
                                         {datas[rowIndex] ?? ""}
                                     </Typography>
                                 </TableCell>

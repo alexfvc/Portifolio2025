@@ -59,7 +59,7 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
         justifyContent="start"
         alignItems="center"
         spacing={3}
-        p={3}
+        p={2}
         borderRadius="5px"
         bgcolor={alpha('rgb(224, 224, 224)', 0.3)}
         sx={{
@@ -69,7 +69,8 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
             bgcolor: alpha('rgb(224, 224, 224)', 0.1),
             },
         }}
-        boxShadow={2}>
+        boxShadow={2}
+        >
       <Stack direction="row" spacing={1} alignItems="center">
         <Icon icon="line-md:filter" fontSize="2rem" color={theme.palette.primary.main} />
         <Typography variant='h5' color='text.secondary' textAlign={'center'} fontWeight="fontWeightBold">Filtro</Typography>
@@ -77,9 +78,15 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
       
       
         <Typography variant='h5' color='text.secondary' textAlign={'center'} fontWeight="fontWeightBold">Selecione os dias da semana trabalhados: </Typography>
-        <Stack direction={{ xs: "column", sm: "row" }} spacing={1}>
+        <Stack 
+          direction={"row"}  
+          useFlexGap={true}
+          sx={{ flexWrap: { xs: "wrap",md: "nowrap" } }} 
+          spacing={1}
+          justifyContent={"center"}
+          >
           {singleDays.map((item, index) => (
-            <Chip
+            <Chip 
               key={index}
               label={item}
               variant={selectedDays.includes(item) ? "filled" : "outlined"}
@@ -92,7 +99,13 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
         </Stack>
 
         <Typography variant='h5' color='text.secondary' textAlign={'center'} fontWeight="fontWeightBold">Selecione o/os Bimestre trabalhados: </Typography>
-        <Stack direction={{ xs: "column", sm: "row" }} spacing={1}>
+        <Stack 
+          direction={ "row" } 
+          useFlexGap={true}
+          sx={{ flexWrap: {xm: "wrap",md: "nowrap" } }} 
+          spacing={1}
+          justifyContent={"center"}
+          >
           {singleBimester.map((item, index) => (
             <Chip
               key={index}

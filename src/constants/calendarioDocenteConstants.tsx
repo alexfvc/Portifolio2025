@@ -3,8 +3,9 @@ const singleDays = [
     "terça-feira",
     "quarta-feira",
     "quinta-feira",
-    "sexta-feira"];
-    
+    "sexta-feira",
+    "recesso"];
+
 const singleBimester = [
     "1° bimestre",
     "2° bimestre",
