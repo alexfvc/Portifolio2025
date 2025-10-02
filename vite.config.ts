@@ -9,5 +9,5 @@ export default defineConfig({
     react(),
     mkcert()
   ],
-  base: "./"
+  base: "/Portifolio2025/"
 })
