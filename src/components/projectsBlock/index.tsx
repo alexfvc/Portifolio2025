@@ -93,9 +93,9 @@ const HomeProjectsBlockComponent = ({
                         </Stack> 
                         ) : 
                         <Stack px={4} pb={2}>
-                        <Typography variant='h6' color='text.secondary' alignItems={'center'} textAlign={'justify'}  fontStyle={'italic'}>
-                            Projeto particular link indisponível
-                        </Typography>
+                            <Typography variant='h6' color='text.secondary' alignItems={'center'} textAlign={'justify'}  fontStyle={'italic'}>
+                                Projeto particular link indisponível
+                            </Typography>
                         </Stack>}
                     </Stack>
                 </Stack>
