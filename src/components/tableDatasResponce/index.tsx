@@ -65,7 +65,7 @@ const CalendarioDocenteTableDataResponceComponent: React.FC<Props> = ({
                             <TableRow >
                                 <TableCell><Typography   
                                     sx={{fontSize: {xs: '0.8rem', md: '1.4rem'}}} color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">#</Typography></TableCell>
-                                    {bimestresSelecionados.map((bim, index) => (
+                                    {bimestresOrdenados.map((bim, index) => (
                                     <TableCell key={index}><Typography sx={{fontSize: {xs: '0.8rem', md: '1.0rem'}}} color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">{bim}</Typography></TableCell>
                                 ))}
                             </TableRow>
@@ -77,7 +77,7 @@ const CalendarioDocenteTableDataResponceComponent: React.FC<Props> = ({
                             {/* aqui entra o índice (rowIndex + 1) */}
                             <TableCell ><Typography  sx={{fontSize: {xs: '0.8rem', md: '1.0rem'}}} color='text.secondary' alignItems={'center'} fontWeight="fontWeightBold">{rowIndex + 1}</Typography></TableCell>
 
-                            {bimestresSelecionados.map((bim, colIndex) => {
+                            {bimestresOrdenados.map((bim, colIndex) => {
                                 const datas = datasPorBimestre[bim] || [];
                                 return (
                                 <TableCell key={colIndex} >
