@@ -1,4 +1,4 @@
-import { alpha, Avatar, Box, Button, Stack, Typography } from "@mui/material";
+import { alpha, Avatar, Box, Button, Stack, Typography, useTheme } from "@mui/material";
 import { Icon } from "@iconify/react";
 
 import usePrimaryColors from "../../theme/colors";
@@ -9,6 +9,7 @@ const HomeProjectsBlockComponent = ({
     textAbout, headerImage, hasLink=false, 
     linkProj, linkGitHub} : iHomeProjectsBlockConponentProps) => {
         const primaryColors = usePrimaryColors();
+        const theme = useTheme();
 
 
     return (
@@ -20,13 +21,17 @@ const HomeProjectsBlockComponent = ({
                 flexDirection={'column'}
                 justifyContent={'space-between'}
                 maxWidth={"100%"}
-                sx={{                         
+                sx={{
                         borderRadius:'8px',
-                        bgcolor:alpha('rgb(224, 224, 224)',0.3),
-                        transition: '0.6s ease-in', 
+                        bgcolor: theme.palette.mode === 'light'
+                          ? alpha('rgb(224, 224, 224)', 0.3)
+                          : alpha('rgb(255, 255, 255)', 0.05),
+                        transition: '0.6s ease-in',
                         '&:hover': {
                             boxShadow: 15,
-                            bgcolor:alpha('rgb(224, 224, 224)',0.1),  
+                            bgcolor: theme.palette.mode === 'light'
+                              ? alpha('rgb(224, 224, 224)', 0.1)
+                              : alpha('rgb(255, 255, 255)', 0.1),
                         },}}
                 >
 
@@ -57,15 +62,15 @@ const HomeProjectsBlockComponent = ({
                                 )} 
                                 <Typography variant='h3' alignItems={'center'}>{title}</Typography>
                             </Stack>
-                            <Typography variant='h6' color={primaryColors.primary.dark} >{subtitle}</Typography>
+                            <Typography variant='h6' color={theme.palette.mode === 'dark' ? theme.palette.primary.light : primaryColors.primary.dark}>{subtitle}</Typography>
                         </Stack>
                                                                 
                         <Stack direction={'column'} justifyContent={'flex-start'} alignItems={{sm:'flex-start',md:'flex-end'}} spacing={2} px={5}>
                             <Stack direction={'row'} alignItems={{sm:'flex-start',md:'flex-end'}}spacing={1} >
-                                <Icon icon={iconA} fontSize={'50px'} color={alpha('rgba(100,100,100)',.7)} />
+                                <Icon icon={iconA} fontSize={'50px'} color={theme.palette.text.secondary} />
                             </Stack>
                             <Stack direction={'row'} alignItems={{sm:'flex-start',md:'flex-end'}}spacing={1} >
-                                <Icon icon={iconB} fontSize={'50px'} color={alpha('rgba(100,100,100)',.7)} />
+                                <Icon icon={iconB} fontSize={'50px'} color={theme.palette.text.secondary} />
                             </Stack>
                         </Stack>
 
@@ -85,8 +90,8 @@ const HomeProjectsBlockComponent = ({
                             >Ver projeto</Button>)}
                             {linkGitHub && (
                             <Button
-                                variant="contained" 
-                                color="inherit"   
+                                variant="outlined"
+                                color="inherit"
                                 startIcon={<Icon icon={'line-md:github'}></Icon>}
                                 onClick={() => window.open(linkGitHub, "_blank")}
                             >Ver código</Button>)}

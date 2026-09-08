@@ -1,4 +1,4 @@
-import { Stack, Chip, Typography, alpha, useTheme } from "@mui/material";
+import { Button, Stack, Chip, Typography, alpha, useTheme } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
 import {
@@ -17,8 +17,6 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
 }) => {
   const theme = useTheme();
 
-  /*const { listAllDatas } = useDataList();*/
-
   const [selectedDays, setSelectedDays] = useState<string[]>([]);
   const [selectedBimesters, setSelectedBimesters] = useState<string[]>([]);
 
@@ -26,31 +24,37 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
     const newSelectedDays = selectedDays.includes(day)
       ? selectedDays.filter((d) => d !== day)
       : [...selectedDays, day];
-
     setSelectedDays(newSelectedDays);
-    return newSelectedDays;
   }
 
   useEffect(() => {
-    if (onDaysChange) {
-      onDaysChange(selectedDays);
-    }
+    if (onDaysChange) onDaysChange(selectedDays);
   }, [selectedDays, onDaysChange]);
 
   function changeBimesterSelection(bimester: string) {
     const newSelectedBims = selectedBimesters.includes(bimester)
       ? selectedBimesters.filter((b) => b !== bimester)
       : [...selectedBimesters, bimester];
-
     setSelectedBimesters(newSelectedBims);
-    return newSelectedBims;
   }
 
   useEffect(() => {
-    if (onBimestersChange) {
-      onBimestersChange(selectedBimesters);
-    }
+    if (onBimestersChange) onBimestersChange(selectedBimesters);
   }, [selectedBimesters, onBimestersChange]);
+
+  function clearFilters() {
+    setSelectedDays([]);
+    setSelectedBimesters([]);
+  }
+
+  const hasFilters = selectedDays.length > 0 || selectedBimesters.length > 0;
+
+  const cardBg = theme.palette.mode === 'light'
+    ? alpha('rgb(224, 224, 224)', 0.3)
+    : alpha('rgb(255, 255, 255)', 0.05);
+  const cardBgHover = theme.palette.mode === 'light'
+    ? alpha('rgb(224, 224, 224)', 0.1)
+    : alpha('rgb(255, 255, 255)', 0.1);
 
   return (
     <Stack
@@ -61,12 +65,12 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
       spacing={3}
       p={2}
       borderRadius="5px"
-      bgcolor={alpha("rgb(224, 224, 224)", 0.3)}
+      bgcolor={cardBg}
       sx={{
         transition: "0.6s ease-in",
         "&:hover": {
           boxShadow: 15,
-          bgcolor: alpha("rgb(224, 224, 224)", 0.1),
+          bgcolor: cardBgHover,
         },
       }}
       boxShadow={2}
@@ -93,7 +97,7 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
         textAlign={"center"}
         fontWeight="fontWeightBold"
       >
-        Selecione os dias da semana trabalhados:{" "}
+        Dias da semana trabalhados:
       </Typography>
       <Stack
         direction={"row"}
@@ -108,9 +112,7 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
             label={item}
             variant={selectedDays.includes(item) ? "filled" : "outlined"}
             color="primary"
-            onClick={() => {
-              changeDaySelection(item);
-            }}
+            onClick={() => changeDaySelection(item)}
           />
         ))}
       </Stack>
@@ -121,12 +123,12 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
         textAlign={"center"}
         fontWeight="fontWeightBold"
       >
-        Selecione o/os Bimestre trabalhados:{" "}
+        Trimestre(s):
       </Typography>
       <Stack
         direction={"row"}
         useFlexGap={true}
-        sx={{ flexWrap: { xm: "wrap", md: "nowrap" } }}
+        sx={{ flexWrap: { xs: "wrap", md: "nowrap" } }}
         spacing={1}
         justifyContent={"center"}
       >
@@ -136,12 +138,22 @@ const CalendarioDocenteFormComponent: React.FC<Props> = ({
             label={item}
             variant={selectedBimesters.includes(item) ? "filled" : "outlined"}
             color="primary"
-            onClick={() => {
-              changeBimesterSelection(item);
-            }}
+            onClick={() => changeBimesterSelection(item)}
           />
         ))}
       </Stack>
+
+      <Button
+        variant="outlined"
+        color="inherit"
+        size="small"
+        disabled={!hasFilters}
+        onClick={clearFilters}
+        startIcon={<Icon icon="material-symbols:filter-list-off" />}
+        sx={{ opacity: hasFilters ? 1 : 0.4 }}
+      >
+        Limpar filtros
+      </Button>
     </Stack>
   );
 };

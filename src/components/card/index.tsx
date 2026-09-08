@@ -1,6 +1,6 @@
 import {Box, Stack, Grid, Typography } from "@mui/material";
 import { Icon } from "@iconify/react"
-import { alpha,  useTheme } from '@mui/system';
+import { alpha, useTheme } from '@mui/system';
 import type { ICardProps } from "../types/i-Card";
 import React from "react";
 
@@ -20,14 +20,18 @@ const HomeCardComponent = ({iconPrimary, iconBg, title,subtitle,subtitle2, child
                 sx={{
                         p:3,
                         borderRadius: '5px',
-                        bgcolor: alpha('rgb(224, 224, 224)', 0.3),
+                        bgcolor: theme.palette.mode === 'light'
+                          ? alpha('rgb(224, 224, 224)', 0.3)
+                          : alpha('rgb(255, 255, 255)', 0.05),
                         transition: '0.6s ease-in',
                         minHeight: '160px',
                         minWidth: '160px',
-                        
+
                         '&:hover': {
                         boxShadow: 15,
-                        bgcolor: alpha('rgb(224, 224, 224)', 0.1),
+                        bgcolor: theme.palette.mode === 'light'
+                          ? alpha('rgb(224, 224, 224)', 0.1)
+                          : alpha('rgb(255, 255, 255)', 0.1),
                     },
                 }}
                 boxShadow={2}
