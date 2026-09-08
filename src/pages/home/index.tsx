@@ -614,7 +614,8 @@ const Home = () => {
                 iconB="catppuccin:javascript-react"
                 hasLink={true}
                 linkGitHub="https://github.com/alexfvc/Portifolio2025/blob/dev/src/pages/calendarioDocente/index.tsx"
-                linkProj="/Portifolio2025/calendario-docente"
+                // linkProj="/Portifolio2025/calendario-docente" // UTIL PARA GITHUB PAGES
+                linkProj="/calendario-docente"
               ></HomeProjectsBlockComponent>
             </HomeTableGridComponent>
           </Stack>
